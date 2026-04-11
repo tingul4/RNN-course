@@ -98,6 +98,8 @@ Every run used 50 epochs, batch size 32, and `seed=2026` for reproducibility. Th
 
 **Result.** The rolling prediction curve tracks the actual closing price closely (see the `Rolling Prediction vs Actual` plot in the notebook), with daily errors remaining in a relatively small range. This gave me enough confidence to use the forecast as a directional reference in the live trading stage.
 
+<br></br>
+
 ---
 
 ## 2. Trading Strategy & Log
