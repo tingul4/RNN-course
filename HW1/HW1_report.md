@@ -1,6 +1,5 @@
 # Assignment 1: Stock Prediction & Live Trading Competition
 
-**Name:** 陳廷曜  
 **Student ID:** 314832008  
 **Target Stock:** TSMC (2330.TW)  
 **Source Code:** [Stock_predict_HW1.ipynb](Stock_predict_HW1.ipynb), ablation study in [ablation_exp.ipynb](ablation_exp.ipynb)
