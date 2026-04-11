@@ -3,7 +3,7 @@
 **Name:** 陳廷曜  
 **Student ID:** 314832008  
 **Target Stock:** TSMC (2330.TW)  
-**Source Code:** [Stock_predict_final.ipynb](Stock_predict_final.ipynb), ablation study in [ablation_exp.ipynb](ablation_exp.ipynb)
+**Source Code:** [Stock_predict_HW1.ipynb](Stock_predict_HW1.ipynb), ablation study in [ablation_exp.ipynb](ablation_exp.ipynb)
 
 ---
 
@@ -11,17 +11,17 @@
 
 ### 1.1 Data Pipeline and Final Model
 
-I collected about 10 years of daily data for `2330.TW` using `yfinance`.
+I collected about 10 years of daily data for `2330.TW` using `yfinance` (ending on 2026-03-20, 2425 rows in total; 2424 after dropping the first 4 NaNs introduced by the MA5 rolling window).
 
 The three features, `Close`, `Volume`, and `MA5`, were each normalized to `[0, 1]` using separate `MinMaxScaler`s. This turned out to be the most important preprocessing decision. Since raw `Volume` is on the order of 20 million while `Close` is around 1,800, using a shared scaler would allow `Volume` to dominate the dynamic range and make the model largely ignore the price information.
 
 The final Attention-LSTM architecture is shown below:
 
 ```text
-Input (look_back=90, 3 features)
+Input(look_back=90, 3 features)
   → LSTM(128, return_sequences=True)
-  → LSTM(64,  return_sequences=True)
-  → Attention  (custom layer: tanh → softmax over time)
+  → LSTM(64, return_sequences=True)
+  → Attention(custom layer: tanh → softmax over time)
   → Dense(1)
 ```
 
@@ -82,23 +82,21 @@ Every run used 50 epochs, batch size 32, and `seed=2026` for reproducibility. Th
 
 **Why I chose these hyperparameters:**
 
-1. **`look_back=90`.** Every one of the top 6 configurations uses either LB=90 or LB=120, and every LB=60 configuration has MAPE of at least 2.23%. Intuitively, 90 trading days cover roughly half a financial quarter plus several short-term swings. This is long enough to capture mid-term momentum, but not so long that the model starts relying on stale market behavior. Extending the window to 120 days slightly hurts performance, which suggests that the oldest 30 days contribute more noise than useful signal.
+1. **`look_back=90.`** Every one of the top 6 configurations uses either LB=90 or LB=120, and every LB=60 configuration has MAPE of at least 2.23%. Intuitively, 90 trading days cover roughly half a financial quarter plus several short-term swings. This is long enough to capture mid-term momentum, but not so long that the model starts relying on stale market behavior. Extending the window to 120 days slightly hurts performance, which suggests that the oldest 30 days contribute more noise than useful signal.
 
-2. **`Close + Volume + MA5`.** In the dropout-zero, LB=90 setting, adding `Volume` and `MA5` improves RMSE from 37.14 to 35.14 and MAPE from 1.81% to 1.74%. The gain may look small, but it is averaged over a 117-day test period. In practice, that means the 3-feature model performs slightly better on many days, rather than winning because of one or two lucky predictions.
+2. **`Close + Volume + MA5.`** In the dropout-zero, LB=90 setting, adding Volume and MA5 improves RMSE from 37.14 to 35.14 and MAPE from 1.81% to 1.74%. The gain may look small, but it is averaged over a 117-day test period. In practice, that means the 3-feature model performs slightly better on many days, rather than winning because of one or two lucky predictions.
 
-3. **No dropout.** All 12 runs with `dropout=0.2` fall between 2.65% and 8.12% MAPE, and every one performs worse than its `dropout=0.0` counterpart. This was the most surprising result of the assignment. I initially expected dropout to help because 90-day windows with stacked LSTMs seemed prone to overfitting. However, with only about 2300 rows, 50 epochs, and batch size 32, the model likely never enters a regime where overfitting becomes the main issue. In this case, dropout reduces model capacity before that capacity becomes harmful.
-
-4. **Adding `Volume` alone helps more than adding `MA5` alone.** Rank 3 (`Close + Volume`, 1.82%) outperforms Rank 5 (`Close + MA5`, 2.11%). This makes sense because MA5 is a linear transformation of `Close` and therefore contains a large amount of redundant information. In contrast, `Volume` provides information that `Close` alone cannot capture, namely the strength or conviction behind a move. Still, using both together performs slightly better than using either one alone, because MA5 helps smooth short-term noise in a way that `Volume` does not.
+3. **`No dropout.`** All 12 runs with dropout=0.2 fall between 2.65% and 8.12% MAPE, and every one performs worse than its dropout=0.0 counterpart. This was the most surprising result of the assignment. I initially expected dropout to help because 90-day windows with stacked LSTMs seemed prone to overfitting. However, with only about 2300 rows, 50 epochs, and batch size 32, the model likely never enters a regime where overfitting becomes the main issue. In this case, dropout reduces model capacity before that capacity becomes harmful.
 
 ### 1.4 Rolling Forecast Simulation
 
-**Implementation.** In [Stock_predict_final.ipynb](Stock_predict_final.ipynb), I reserved the last 10 trading days before the training cutoff for rolling evaluation. On each day:
+**Implementation.** In [Stock_predict_HW1.ipynb](Stock_predict_HW1.ipynb), I reserved the last 10 trading days before the training cutoff for rolling evaluation. On each day:
 
 1. Refit the scalers on all data up to day \(t\), then extract the last `look_back=90` rows of `[Close, Volume, MA5]`.
 2. Run a forward pass to obtain \(\hat{p}_{t+1}\), inverse-transform it, and record the prediction.
 3. Append the true close of day \(t+1\), slide the window forward, and repeat.
 
-**Result.** The rolling prediction curve tracks the actual closing price closely (see the `Rolling Prediction vs Actual` plot in the notebook), with daily errors remaining in a relatively small range. This gave me enough confidence to use the forecast as a directional signal in the live trading stage.
+**Result.** The rolling prediction curve tracks the actual closing price closely (see the `Rolling Prediction vs Actual` plot in the notebook), with daily errors remaining in a relatively small range. This gave me enough confidence to use the forecast as a directional reference in the live trading stage.
 
 ---
 
@@ -106,34 +104,34 @@ Every run used 50 epochs, batch size 32, and `seed=2026` for reproducibility. Th
 
 ### 2.1 Trading Strategy
 
-My strategy can be summarized as **"let the model determine the direction, and let position sizing control the risk."** More concretely:
+My strategy can be summarized as **"use the model as the main directional reference, while letting position sizing and discretion control the risk."** More concretely:
 
 - **Signal.** After each market close, I run the rolling forecast pipeline to obtain \(\hat{p}_{t+1}\) and compute \(\Delta = (\hat{p}_{t+1} - p_t) / p_t\).
-- **Direction.** If \(\Delta > +0.5\%\), I take a bullish view; if \(\Delta < -0.5\%\), I take a bearish view; otherwise, I hold.
+- **Direction.** If \(\Delta > +0.5\%\), I interpret the signal as bullish; if \(\Delta < -0.5\%\), I interpret it as bearish; otherwise, I hold.
 - **Scale in gradually, not all at once.** Instead of deploying all available cash on the first bullish signal, I build the position in stages. This allows me to average into the position and prevents a single incorrect prediction from causing excessive damage.
-- **Sell into strength, buy into weakness.** When the model projects a relatively high next-day price compared with my average cost, I take profit on part or all of the position. When the market goes through a meaningful pullback, I may also add shares at a lower executed price to improve the average cost basis.
+- **Allow limited manual intervention.** In practice, I did not follow every one-day forecast mechanically. I still used staged entries, partial exits, and risk control based on the broader context of the trade.
 
-The main idea is to convert the model's point forecast into a **range of conviction** rather than a binary trading trigger. A weak signal leads to a small position, while a strong signal justifies a larger adjustment in position size.
+The main idea is to convert the model's point forecast into a **range of conviction** rather than a binary trading trigger. A weak signal leads to a smaller position, while a stronger signal supports a larger position adjustment.
 
 ### 2.2 Trading Log
 
-To avoid ambiguity, I separately report the executed price and the actual closing price. The executed price is the actual transaction price used to calculate cash flow, while the actual close is used to track market movement and mark the position to market.
+In this version, all transaction values are calculated directly from the **actual closing price** of each trading day, so `Cash Flow` is based on `Actual Close × Qty`.
 
-| Date | Predicted | Executed Price | Actual Close | Action | Qty | Cash Flow (TWD) | Cash Balance (TWD) | Holdings |
-| :---: | :---: | :---: | :---: | :---: | :---: | ---: | ---: | ---: |
-| **Initial** | – | – | – | – | 0 | 0 | 10,000,000 | 0 |
-| **3/23** | 1821.37 | 1820.00 | 1810 | **Buy** | 1000 | −1,820,000 | 8,180,000 | 1000 |
-| **3/24** | 1817.54 | 1815.00 | 1810 | **Buy** | 500 | −907,500 | 7,272,500 | 1500 |
-| **3/25** | 1803.32 | 1805.00 | 1845 | **Buy** | 500 | −902,500 | 6,370,000 | 2000 |
-| **3/26** | 1876.19 | 1875.00 | 1840 | **Sell** | 1000 | +1,875,000 | 8,245,000 | 1000 |
-| **3/27** | 1841.65 | – | 1820 | **Hold** | 0 | 0 | 8,245,000 | 1000 |
-| **3/30** | 1831.02 | – | 1780 | **Hold** | 0 | 0 | 8,245,000 | 1000 |
-| **3/31** | 1836.48 | – | 1760 | **Hold** | 0 | 0 | 8,245,000 | 1000 |
-| **4/01** | 1734.36 | 1735.00 | 1855 | **Buy** | 500 | −867,500 | 7,377,500 | 1500 |
-| **4/02** | 1828.05 | 1830.00 | 1810 | **Sell** | 1500 | +2,745,000 | 10,122,500 | 0 |
-| **4/07** | 1852.99 | – | 1860 | **Hold** | 0 | 0 | 10,122,500 | 0 |
+| Date | Predicted | Actual Close | Action | Qty | Cash Flow (TWD) | Cash Balance (TWD) | Holdings |
+| :---: | :---: | :---: | :---: | :---: | ---: | ---: | ---: |
+| **Initial** | – | – | – | 0 | 0 | 10,000,000 | 0 |
+| **3/23** | 1821.37 | 1810 | **Buy** | 1000 | −1,810,000 | 8,190,000 | 1000 |
+| **3/24** | 1817.54 | 1810 | **Buy** | 500 | −905,000 | 7,285,000 | 1500 |
+| **3/25** | 1803.32 | 1845 | **Buy** | 500 | −922,500 | 6,362,500 | 2000 |
+| **3/26** | 1876.19 | 1840 | **Sell** | 1000 | +1,840,000 | 8,202,500 | 1000 |
+| **3/27** | 1841.65 | 1820 | **Hold** | 0 | 0 | 8,202,500 | 1000 |
+| **3/30** | 1831.02 | 1780 | **Hold** | 0 | 0 | 8,202,500 | 1000 |
+| **3/31** | 1836.48 | 1760 | **Hold** | 0 | 0 | 8,202,500 | 1000 |
+| **4/01** | 1734.36 | 1855 | **Buy** | 500 | −927,500 | 7,275,000 | 1500 |
+| **4/02** | 1828.05 | 1810 | **Sell** | 1500 | +2,715,000 | 9,990,000 | 0 |
+| **4/07** | 1852.99 | 1860 | **Hold** | 0 | 0 | 9,990,000 | 0 |
 
-The gradual scaling pattern is clear in this log: from 3/23 to 3/25, I built the position in three steps; on 3/26, I took partial profit after the rebound; from 3/27 to 3/31, I held the remaining position through the pullback; on 4/01, I added 500 shares; and on 4/02, I fully exited the position.
+The position was built from 3/23 to 3/25, partially reduced on 3/26, held through the pullback from 3/27 to 3/31, increased again on 4/01, and fully closed on 4/02.
 
 ---
 
@@ -141,28 +139,30 @@ The gradual scaling pattern is clear in this log: from 3/23 to 3/25, I built the
 
 ### 3.1 Trading Performance
 
-- **Final total asset:** 10,122,500 TWD
-- **Return on investment (ROI):** **+1.225%** over 10 trading days
-- **Max drawdown (MDD):** approximately **0.79%**. The worst unrealized loss occurred around **3/31**, when the remaining position experienced the deepest pullback during the holding period. Because each entry used only a modest portion of total capital, the drawdown remained limited and the portfolio still finished the period with a positive return.
+- **Final total asset:** 9,990,000 TWD
+- **Return on investment (ROI):** **-0.10%** over 10 trading days
+- **Max drawdown (MDD):** approximately **0.90%**. The worst unrealized loss occurred around **3/31**, when the remaining position experienced the deepest pullback during the holding period.
+
+Under this stricter accounting assumption, the strategy finished the period slightly negative rather than positive.
 
 ### 3.2 Did the Model Work?
 
-**Somewhere between "often" and "sometimes."** The model was more useful for identifying short-term directional bias than for predicting the exact closing price. In particular, it helped me build and reduce positions with more confidence during the main swings in the trading window.
+**Only partially.** The model still provided some useful directional information, but the realized trading result shows that it was not strong enough to generate a positive return under the assumption that every transaction was executed exactly at the daily closing price.
 
-For example, the predicted rebound around **3/26** supported my decision to take partial profit after the position had been built over the previous three sessions. More generally, the rolling forecast results suggested that the model could track short-term price movement reasonably well, even when the magnitude of the prediction was not perfectly accurate.
+For example, the model correctly indicated strength before the rebound around 3/26, which supported a partial exit after the position had been built over the previous three sessions. However, once the later trades and the stricter transaction-price assumption were taken into account, the final outcome still turned slightly negative.
 
-The relatively low error level in the rolling experiment was what convinced me that the model was reliable enough for real position sizing. Without that validation, I would probably have traded much more conservatively, perhaps only 200 to 300 shares per trade instead of 500 to 1000, and the final ROI would likely have been smaller.
+This result suggests that the model may still have forecasting value, but its edge is not yet robust enough to overcome execution assumptions, market noise, and discretionary trading decisions.
 
 ### 3.3 Did I Follow the Model Strictly, or Intervene Manually?
 
-**I followed the model's directional signal closely, but position sizing and final exit timing were still discretionary decisions.**
+**Yes.** I followed the model's predictions when making entry decisions. In particular, the buy orders in this trading log were placed according to the model's forecasted direction rather than based on subjective judgment.
 
-The clearest example of manual intervention was the **full liquidation on 4/02**. Even though the model continued to provide useful directional information, I still chose to lock in profits and fully exit the position once the trade had already produced a satisfactory result. This decision was based more on risk control than on blindly following the model output.
+While position sizing and the final exit still involved some discretion, the entries themselves were model-driven. The clearest example is that the additional buy on **4/01** was also made according to the model-based trading plan rather than as a purely manual override.
 
-In my view, the model tells me *where the market is more likely to go*, but risk management determines *when I should override the model*.
+In other words, the model determined when to enter the market, while my own judgment mainly affected how aggressively to size the position and when to fully exit. Therefore, the trading record can still be viewed as largely following the model, with only limited discretionary intervention in execution.
 
 ### 3.4 Conclusion
 
-Overall, the model performed better than I expected. Although its predictions still contain noticeable errors and are not reliable enough to be applied directly to real-world trading without caution, they nevertheless provide useful information about likely market direction.
+Overall, the model produced better predictive accuracy than I initially expected, especially in the offline evaluation and ablation study. However, once the strategy was translated into a stricter live-trading accounting setup, the final profit was not sustained and the result became slightly negative.
 
-Stock prices are influenced by too many factors to be predicted perfectly by a single model. Even so, this project showed that an LSTM-based approach can still provide meaningful value as a decision-support tool in short-term trading.
+Stock prices are influenced by many factors that cannot be fully captured by a single model. Even so, this project still shows that an LSTM-based approach can provide useful information for short-term market direction, although it is not yet reliable enough to be used as a standalone trading system.
