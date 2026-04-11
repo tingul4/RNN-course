@@ -1,7 +1,7 @@
 # Assignment 1: Stock Prediction & Live Trading Competition
 
 **Student ID:** 314832008  
-**Source Code:** https://github.com/tingul4/RNN-course
+**Source Code:** [https://github.com/tingul4/RNN-course](https://github.com/tingul4/RNN-course)
 
 ---
 
@@ -9,7 +9,7 @@
 
 ### 1.1 Data Pipeline and Final Model
 
-I collected about 10 years of daily data for `2330.TW` using `yfinance` (ending on 2026-03-20, 2425 rows in total; 2424 after dropping the first 4 NaNs introduced by the MA5 rolling window).
+I collected about 10 years of daily data for `2330.TW` using `yfinance`.
 
 The three features, `Close`, `Volume`, and `MA5`, were each normalized to `[0, 1]` using separate `MinMaxScaler`s. This turned out to be the most important preprocessing decision. Since raw `Volume` is on the order of 20 million while `Close` is around 1,800, using a shared scaler would allow `Volume` to dominate the dynamic range and make the model largely ignore the price information.
 
@@ -32,12 +32,14 @@ Why add Attention on top of stacked LSTMs? Once I extended `look_back` to 90 day
 
 ### 1.2 Baseline vs. Best Model
 
-For the baseline, I used a minimal setup: only `Close`, `look_back=60`, no dropout, and all other settings identical to the final model. This represents a sequence model with no additional feature engineering and no tuning of the window size.
+For the baseline, I used a minimal setup: only `Close`, `look_back=60`, `no dropout`, and all other settings identical to the final model. This represents a sequence model with no additional feature engineering and no tuning of the window size.
 
-| Model Configuration | Features | `look_back` | Dropout | Test RMSE | Test MAPE |
+<br></br>
+
+| Model Configuration | Features | look_back | Dropout | Test RMSE | Test MAPE |
 | :--- | :--- | :---: | :---: | :---: | :---: |
-| Baseline (Close only) | `[Close]` | 60 | 0.0 | 46.09 | 2.23% |
-| **Best Model** | `[Close, Volume, MA5]` | **90** | **0.0** | **35.14** | **1.74%** |
+| Baseline (Close only) | [Close] | 60 | 0.0 | 46.09 | 2.23% |
+| **Best Model** | **[Close, Volume, MA5]** | **90** | **0.0** | **35.14** | **1.74%** |
 
 Compared with the baseline, the best model reduces RMSE by about **23.8%** and MAPE by about **22.0%**. The next section supports this conclusion with an ablation study rather than relying only on a single best result.
 
