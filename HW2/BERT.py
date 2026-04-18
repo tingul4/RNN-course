@@ -1,6 +1,8 @@
 import torch
 from transformers import AutoTokenizer, AutoModelForSequenceClassification, Trainer, TrainingArguments
 from datasets import Dataset
+import pandas as pd
+from sklearn.model_selection import train_test_split
 
 # ================= CONFIGURATION =================
 # Students should run this twice: once with 'bert-base-cased', once with 'bert-large-cased'
@@ -11,6 +13,16 @@ MAX_LEN = 512
 BATCH_SIZE = 16 # RTX 4090 can handle 16-32 for Large, 32-64 for Base
 EPOCHS = 2
 # =================================================
+
+# Load Data (Assuming a CSV with 'text' and 'label' columns)
+# Students should download the dataset from Kaggle
+df = pd.read_csv("dataset/train_v2_drcat_02.csv")  # Example filename
+df = df[['text', 'label']] # Ensure columns exist
+
+# Split Data
+X_train, X_val, y_train, y_val = train_test_split(
+    df['text'], df['label'], test_size=0.2, random_state=42
+)
 
 # 1. Prepare Hugging Face Dataset
 train_df = pd.DataFrame({'text': X_train, 'label': y_train})

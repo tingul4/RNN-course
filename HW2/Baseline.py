@@ -8,7 +8,7 @@ from sklearn.metrics import roc_auc_score, accuracy_score
 
 # 1. Load Data (Assuming a CSV with 'text' and 'label' columns)
 # Students should download the dataset from Kaggle
-df = pd.read_csv("train_v2_drcat_02.csv")  # Example filename
+df = pd.read_csv("dataset/train_v2_drcat_02.csv")  # Example filename
 df = df[['text', 'label']] # Ensure columns exist
 
 # Split Data
