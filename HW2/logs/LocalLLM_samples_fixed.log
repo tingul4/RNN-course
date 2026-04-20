@@ -1,0 +1,120 @@
+Loading LLM for generation...
+Loading BERT detector...
+Original Human Text (Snippet): So all of this has been going on for awhile now on the news with all the gossip and rummors being spread its lead you to beleive there is life on mars. The question is is there really life on mars. Th...
+
+[no. 3065] Generated Attack Text (Snippet): So like the news has been talking about this stuff for a while now, and it's all about how there might be life on Mars. The thing is, nobody's ever been to Mars so you can't really know for sure. They...
+
+[no. 3065] Testing against BERT Detector...
+[no. 3065] Detector Prediction: AI-Generated
+[no. 3065] Confidence (AI Class): 0.9996
+[no. 3065] FAILED. The detector caught the LLM.
+--------------------------------------------------------------------------------
+Original Human Text (Snippet): The author figures that is a worthy pursuit despite the risks and dangers because its the closest thing to Earth. In paragraph 2 the author states. " Venus is the closet planet to Earth in terms of si...
+
+[no. 4434] Generated Attack Text (Snippet): Venus is a planet that's really cool to learn about even though it's super hot and harsh. It's actually really close to Earth in size and density, and sometimes it's even closer in distance. I think i...
+
+[no. 4434] Testing against BERT Detector...
+[no. 4434] Detector Prediction: AI-Generated
+[no. 4434] Confidence (AI Class): 0.9999
+[no. 4434] FAILED. The detector caught the LLM.
+--------------------------------------------------------------------------------
+Original Human Text (Snippet): Dear TEACHER_NAME,
+
+Everyday cell phones save the lives of people. I believe that cell phones are a great piece of technology that we all use in our everyday lives. To me allowing students to bring th...
+
+[no. 4733] Generated Attack Text (Snippet): Dear Teacher,
+
+I think cell phones are really helpful and can even save lives. I think it would be a good idea to let students bring their phones to school and use them during free periods, as long as...
+
+[no. 4733] Testing against BERT Detector...
+[no. 4733] Detector Prediction: AI-Generated
+[no. 4733] Confidence (AI Class): 1.0000
+[no. 4733] FAILED. The detector caught the LLM.
+--------------------------------------------------------------------------------
+Original Human Text (Snippet): I think students should be able to participate in after school activities if they have a c for a lot of reasons. One reason why is because some students don't learn as fast as others so some students ...
+
+[no. 1202] Generated Attack Text (Snippet): I think students should be able to do after school activities even if they have a C. There's a lot of reasons why. First, not everyone learns the same way. Some people might not get good grades just b...
+
+[no. 1202] Testing against BERT Detector...
+[no. 1202] Detector Prediction: AI-Generated
+[no. 1202] Confidence (AI Class): 0.9996
+[no. 1202] FAILED. The detector caught the LLM.
+--------------------------------------------------------------------------------
+Original Human Text (Snippet): Generic_Name is a freshman in high school who's a very shy person. He stays to himself and doesn't have many friends he tries to fit in but he gets bullied everyday. So this made Generic_Name to stop ...
+
+[no. 1294] Generated Attack Text (Snippet): Here's the rewritten essay:
+
+I'm Generic_Name and I'm a freshman in high school. I'm really shy and I don't have many friends. I try to fit in but kids at school are mean and they bully me every day. ...
+
+[no. 1294] Testing against BERT Detector...
+[no. 1294] Detector Prediction: AI-Generated
+[no. 1294] Confidence (AI Class): 1.0000
+[no. 1294] FAILED. The detector caught the LLM.
+--------------------------------------------------------------------------------
+Original Human Text (Snippet): Today we will be talking about the story "A Cowboy Who Rode the Waves." So sit back in your chair, and prepare to get lost your mind. Veiwer beware you might just learn somthing new.
+
+In this paragrap...
+
+[no. 6014] Generated Attack Text (Snippet): Here is the rewritten essay:
+
+So, let's talk about this story "A Cowboy Who Rode the Waves". It's a pretty cool story, so grab a seat and get ready.
+
+The main guy in the story is Luke Bomberger, who r...
+
+[no. 6014] Testing against BERT Detector...
+[no. 6014] Detector Prediction: AI-Generated
+[no. 6014] Confidence (AI Class): 1.0000
+[no. 6014] FAILED. The detector caught the LLM.
+--------------------------------------------------------------------------------
+Original Human Text (Snippet): Texting and Driving
+
+The generation of today rely on their phones, for majority of things today. Phones are a great way to operate in the world. Along with the greatness of phones there are also many ...
+
+[no. 7205] Generated Attack Text (Snippet): Texting and Driving is a Big Problem
+
+Today, people rely on their phones for almost everything. Phones are super helpful, but there are also downsides.
+
+A lot of people drive and text at the same time...
+
+[no. 7205] Testing against BERT Detector...
+[no. 7205] Detector Prediction: AI-Generated
+[no. 7205] Confidence (AI Class): 0.9998
+[no. 7205] FAILED. The detector caught the LLM.
+--------------------------------------------------------------------------------
+Original Human Text (Snippet): So to start here is a letter to my state senator, in which I argue in favor of keeping the electoral college or changing to election by popular vote for the president of the united states. The elector...
+
+[no. 5834] Generated Attack Text (Snippet): Here's my essay:
+
+So I'm writing to my state senator to argue for keeping the electoral college or switching to a popular vote for president. The electoral college isn't a place, it's a process. It's ...
+
+[no. 5834] Testing against BERT Detector...
+[no. 5834] Detector Prediction: AI-Generated
+[no. 5834] Confidence (AI Class): 1.0000
+[no. 5834] FAILED. The detector caught the LLM.
+--------------------------------------------------------------------------------
+Original Human Text (Snippet): The using of cars has caused much of the worlds green house gas imitions, in America as much as 50% of the imitions are caused souly by transportation. Many people feel that this is destroying our atm...
+
+[no. 4419] Generated Attack Text (Snippet): Cars are really hurting the environment, especially in America where transportation is responsible for like 50% of greenhouse gas emissions. A lot of people think this is super bad and we should walk,...
+
+[no. 4419] Testing against BERT Detector...
+[no. 4419] Detector Prediction: Human-Written
+[no. 4419] Confidence (AI Class): 0.0035
+[no. 4419] SUCCESS! The LLM fooled the detector.
+--------------------------------------------------------------------------------
+Original Human Text (Snippet): Opinions are the reason why we have so many different personalities.
+
+When people share their own opinion you can see all the different thoughts they have about a certain topic.
+
+I believe that when y...
+
+[no. 5422] Generated Attack Text (Snippet): Opinions are what make everyone unique and special.
+
+When people share their opinions, it's like seeing into their minds. You get to see all the different thoughts they have about a topic.
+
+I think ha...
+
+[no. 5422] Testing against BERT Detector...
+[no. 5422] Detector Prediction: AI-Generated
+[no. 5422] Confidence (AI Class): 1.0000
+[no. 5422] FAILED. The detector caught the LLM.
+--------------------------------------------------------------------------------

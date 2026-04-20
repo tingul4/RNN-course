@@ -1,13 +1,18 @@
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"  # 只使用第一張卡，避免被其他滿載的卡或顯示卡干擾
+
 import torch
 from transformers import AutoTokenizer, AutoModelForSequenceClassification, Trainer, TrainingArguments
 from datasets import Dataset
 import pandas as pd
 from sklearn.model_selection import train_test_split
+from sklearn.metrics import roc_auc_score, accuracy_score
+from scipy.special import softmax
 
 # ================= CONFIGURATION =================
 # Students should run this twice: once with 'bert-base-cased', once with 'bert-large-cased'
-MODEL_NAME = "bert-base-cased" 
-# MODEL_NAME = "bert-large-cased" 
+# MODEL_NAME = "bert-base-cased"
+MODEL_NAME = "bert-large-cased" 
 
 MAX_LEN = 512
 BATCH_SIZE = 16 # RTX 4090 can handle 16-32 for Large, 32-64 for Base
@@ -69,9 +74,16 @@ trainer = Trainer(
 print(f"Starting training for {MODEL_NAME}...")
 trainer.train()
 
+pred_out = trainer.predict(tokenized_val)
+logits = pred_out.predictions
+labels = pred_out.label_ids
+probs = softmax(logits, axis=-1)[:, 1]
+auc = roc_auc_score(labels, probs)
+
 # 6. Evaluation
 results = trainer.evaluate()
 print(f"Evaluation Results for {MODEL_NAME}: {results}")
+print(f"ROC-AUC for {MODEL_NAME}: {auc}")
 
 # Save the model for Part 3
 model.save_pretrained(f"./saved_model_{MODEL_NAME}")

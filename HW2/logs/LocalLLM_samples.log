@@ -1,0 +1,130 @@
+Loading LLM for generation...
+Loading BERT detector...
+Original Human Text (Snippet): 390,000 injuries occur each year from accidents caused by texting while driving.
+
+1 out of every 4 car accidents in the United States is caused by texting and driving. Because of this Georgia has made...
+
+[no. 4376] Generated Attack Text (Snippet): Here is the rewritten essay:
+
+Every year, there are 390,000 injuries from car accidents that are caused by people texting and driving. It's crazy to think about, but one out of every four car accident...
+
+[no. 4376] Testing against BERT Detector...
+[no. 4376] Detector Prediction: AI-Generated
+[no. 4376] Confidence (AI Class): 1.0000
+[no. 4376] FAILED. The detector caught the LLM.
+--------------------------------------------------------------------------------
+Original Human Text (Snippet): My principal has decided that all students must participate in at least one extracurricular activity. Some of those things students can do is sports, work on the school yearbook,and serve on student c...
+
+[no. 4092] Generated Attack Text (Snippet): Here's the rewritten essay in a style that sounds like a real high school student wrote it:
+
+My principal just made a new rule that we all have to do at least one extracurricular activity. Some of the...
+
+[no. 4092] Testing against BERT Detector...
+[no. 4092] Detector Prediction: AI-Generated
+[no. 4092] Confidence (AI Class): 0.9999
+[no. 4092] FAILED. The detector caught the LLM.
+--------------------------------------------------------------------------------
+Original Human Text (Snippet): Seagoing Cowboys
+
+Hello everyone reading this , i'm guessing your thinking " who me?? "
+
+to answer your question yes i'm talking to you , my name is Luke Bomberger and i would love if you would join t...
+
+[no. 6108] Generated Attack Text (Snippet): Here's a rewritten version of the essay in a style that sounds like a real high school student wrote it:
+
+Hey everyone,
+
+So, I'm guessing you're wondering who I am and what's up with the Seagoing Cowb...
+
+[no. 6108] Testing against BERT Detector...
+[no. 6108] Detector Prediction: AI-Generated
+[no. 6108] Confidence (AI Class): 1.0000
+[no. 6108] FAILED. The detector caught the LLM.
+--------------------------------------------------------------------------------
+Original Human Text (Snippet): Hi, I would like to show you some cool things about being in the Seagoing Cowboys. The first thing I want to tell you is, that when you are traveling somewhere you get to see all the beautiful sight's...
+
+[no. 6359] Generated Attack Text (Snippet): Here's a rewritten version of the essay in a style that sounds like a real high school student wrote it:
+
+Hey, I want to tell you about this awesome program called the Seagoing Cowboys. When you're on...
+
+[no. 6359] Testing against BERT Detector...
+[no. 6359] Detector Prediction: AI-Generated
+[no. 6359] Confidence (AI Class): 1.0000
+[no. 6359] FAILED. The detector caught the LLM.
+--------------------------------------------------------------------------------
+Original Human Text (Snippet): The using of cars has caused much of the worlds green house gas imitions, in America as much as 50% of the imitions are caused souly by transportation. Many people feel that this is destroying our atm...
+
+[no. 4419] Generated Attack Text (Snippet): Here's a rewritten version of the essay in a style that sounds like it was written by a real high school student:
+
+The use of cars is really hurting the environment. In the US, transportation is the m...
+
+[no. 4419] Testing against BERT Detector...
+[no. 4419] Detector Prediction: AI-Generated
+[no. 4419] Confidence (AI Class): 0.9990
+[no. 4419] FAILED. The detector caught the LLM.
+--------------------------------------------------------------------------------
+Original Human Text (Snippet): Using technology called the Facial Action Coding System (FACS) in a classroom is not a good idea.
+
+The FACS enables computers to read human emtions such as sad, happy, scared etc.
+
+It uses a 3-D comou...
+
+[no. 1522] Generated Attack Text (Snippet): Here's a rewritten version of the essay in a more natural and imperfect high school student style:
+
+I don't think the Facial Action Coding System (FACS) should be used in classrooms. This technology c...
+
+[no. 1522] Testing against BERT Detector...
+[no. 1522] Detector Prediction: AI-Generated
+[no. 1522] Confidence (AI Class): 0.9994
+[no. 1522] FAILED. The detector caught the LLM.
+--------------------------------------------------------------------------------
+Original Human Text (Snippet): Dear, principal
+
+I believe that you should not change the school policy. My views on the subject is that the policy stay the same. Not only has the policy been the same for several years but, some stu...
+
+[no. 8942] Generated Attack Text (Snippet): Dear Principal,
+
+I think you should keep the school policy the same. My opinion is that it shouldn't change. The policy has been the same for a while and some students are really struggling in certain...
+
+[no. 8942] Testing against BERT Detector...
+[no. 8942] Detector Prediction: AI-Generated
+[no. 8942] Confidence (AI Class): 1.0000
+[no. 8942] FAILED. The detector caught the LLM.
+--------------------------------------------------------------------------------
+Original Human Text (Snippet): Is it a good idea to force students to participate in extracurricular activities? Extracurricular are set in place to allow students to expand on what they want for their future which should be option...
+
+[no. 4863] Generated Attack Text (Snippet): Here's a rewritten version of the essay in a style that sounds like a real high school student wrote it:
+
+I think it's not a good idea to make students do extracurricular activities. These activities ...
+
+[no. 4863] Testing against BERT Detector...
+[no. 4863] Detector Prediction: AI-Generated
+[no. 4863] Confidence (AI Class): 1.0000
+[no. 4863] FAILED. The detector caught the LLM.
+--------------------------------------------------------------------------------
+Original Human Text (Snippet): This article show us many emotions that each person have, and how our face expressed emotions by any situation. Also explain the most common emotions that each person used more, they are happiness, su...
+
+[no. 6162] Generated Attack Text (Snippet): Here's the rewritten essay:
+
+This article shows us all the emotions we can feel and how our face shows those emotions depending on the situation. It also talks about the most common emotions people fe...
+
+[no. 6162] Testing against BERT Detector...
+[no. 6162] Detector Prediction: AI-Generated
+[no. 6162] Confidence (AI Class): 1.0000
+[no. 6162] FAILED. The detector caught the LLM.
+--------------------------------------------------------------------------------
+Original Human Text (Snippet): Dear Senator,
+
+I honestly think this is a waste of time. I mean  what the point of being a democate or a republican. Huh? We all live in the same county, so what's the point of seprating us. I would h...
+
+[no. 6534] Generated Attack Text (Snippet): Here's the rewritten essay in the style of a high school student:
+
+Dear Senator,
+
+I don't get why we're making such a big deal about being Democrats or Republicans. We all live in the same country, so...
+
+[no. 6534] Testing against BERT Detector...
+[no. 6534] Detector Prediction: AI-Generated
+[no. 6534] Confidence (AI Class): 1.0000
+[no. 6534] FAILED. The detector caught the LLM.
+--------------------------------------------------------------------------------
