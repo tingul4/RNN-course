@@ -1,5 +1,10 @@
 # Assignment 2: Detect AI Generated Text
 
+**Student ID:** 314832008  
+**Source Code:** [https://github.com/tingul4/RNN-course](https://github.com/tingul4/RNN-course)
+
+---
+
 ## Part 1: Data Exploration and Baseline Performance
 
 ### Text Statistics
