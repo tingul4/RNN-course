@@ -44,10 +44,16 @@ documents = load_corpus() # For real data
 # Small chunks, strict cut-off
 splitter_a = RecursiveCharacterTextSplitter(
     chunk_size=500,
-    chunk_overlap=10
+    chunk_overlap=50
 )
 docs_a = splitter_a.split_documents(documents)
-print(f"Strategy A (Fixed): Created {len(docs_a)} chunks.")
+print(f"Strategy A (Fixed | chunk_size=500): Created {len(docs_a)} chunks.")
+splitter_a_1000 = RecursiveCharacterTextSplitter(
+    chunk_size=1000,
+    chunk_overlap=50
+)
+docs_a_1000 = splitter_a_1000.split_documents(documents)
+print(f"Strategy A (Fixed | chunk_size=1000): Created {len(docs_a_1000)} chunks.")
 
 # --- Strategy B: Semantic/Larger Chunking ---
 # Larger chunks to preserve context (Paragraph level)
