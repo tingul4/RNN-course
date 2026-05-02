@@ -2,7 +2,7 @@
 # run `ollama serve` in terminal before executing this script
 #%%
 import requests
-import json
+import time
 from Retrieval import advanced_rag_retrieve
 from DB import vector_db
 
@@ -42,7 +42,10 @@ def run_rag_pipeline(query):
     
     # 3. Generate
     print("\nGenerating Answer...")
+    start_gen = time.time()
     answer = query_ollama(prompt)
+    llm_latency = time.time() - start_gen
+    print(f"[Latency] LLM Generation: {llm_latency:.4f} seconds")
     return answer
 
 # --- Final Execution ---
