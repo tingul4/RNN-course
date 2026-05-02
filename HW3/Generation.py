@@ -1,7 +1,12 @@
+# Terminal commands
+# run `ollama serve` in terminal before executing this script
+#%%
 import requests
 import json
+from Retrieval import advanced_rag_retrieve
+from DB import vector_db
 
-def query_ollama(prompt, model="llama3"):
+def query_ollama(prompt, model="llama3:8b"):
     url = "http://localhost:11434/api/generate"
     data = {
         "model": model,

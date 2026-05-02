@@ -6,3 +6,5 @@ results_bert-base-cased/
 results_bert-large-cased/
 saved_model_bert-base-cased/
 saved_model_bert-large-cased
+*_db_*
+.claude/

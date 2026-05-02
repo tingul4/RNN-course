@@ -1,11 +1,28 @@
 # Terminal commands
 # pip install langchain langchain-community langchain-huggingface chromadb sentence-transformers torch
 # ollama pull llama3
-
+#%%
 import pandas as pd
+import os
 
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.docstore.document import Document
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_core.documents import Document
+
+_DATA_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "dataset/train.csv")
+
+def load_corpus(path=_DATA_PATH):
+    """Load train.csv; each (question + one answer option) becomes one Document."""
+    df = pd.read_csv(path)
+    corpus = []
+    for _, row in df.iterrows():
+        for opt in ["A", "B", "C", "D", "E"]:
+            text = f"{row['prompt'].strip()}\n\nOption {opt}: {str(row[opt]).strip()}"
+            corpus.append(Document(
+                page_content=text,
+                metadata={"question_id": int(row["id"]), "option": opt,
+                          "is_correct": str(row["answer"]).strip() == opt}
+            ))
+    return corpus
 
 # --- TA Note: Use a small synthetic corpus for testing logic ---
 # In the real assignment, students will load the Wikipedia parquet file.
@@ -20,13 +37,14 @@ raw_text_corpus = [
 ]
 
 # Convert to LangChain Documents
-documents = [Document(page_content=text, metadata={"source": f"doc_{i}"}) for i, text in enumerate(raw_text_corpus)]
+# documents = [Document(page_content=text, metadata={"source": f"doc_{i}"}) for i, text in enumerate(raw_text_corpus)] # For test data
+documents = load_corpus() # For real data
 
 # --- Strategy A: Fixed-Size Chunking (Naive) ---
 # Small chunks, strict cut-off
 splitter_a = RecursiveCharacterTextSplitter(
-    chunk_size=100,
-    chunk_overlap=20
+    chunk_size=500,
+    chunk_overlap=10
 )
 docs_a = splitter_a.split_documents(documents)
 print(f"Strategy A (Fixed): Created {len(docs_a)} chunks.")
@@ -34,8 +52,8 @@ print(f"Strategy A (Fixed): Created {len(docs_a)} chunks.")
 # --- Strategy B: Semantic/Larger Chunking ---
 # Larger chunks to preserve context (Paragraph level)
 splitter_b = RecursiveCharacterTextSplitter(
-    chunk_size=300,
-    chunk_overlap=50
+    chunk_size=1000,
+    chunk_overlap=200
 )
 docs_b = splitter_b.split_documents(documents)
 print(f"Strategy B (Semantic): Created {len(docs_b)} chunks.")

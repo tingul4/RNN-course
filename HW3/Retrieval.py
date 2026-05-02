@@ -1,5 +1,6 @@
+#%%
 from sentence_transformers import CrossEncoder
-import torch
+from DB import vector_db
 
 # --- Load Cross-Encoder (The Re-ranker) ---
 # This model takes (Query, Document) pairs and outputs a similarity score.
@@ -8,7 +9,7 @@ print(f"Loading Cross-Encoder: {RERANK_MODEL_NAME} on CUDA...")
 
 reranker = CrossEncoder(RERANK_MODEL_NAME, device='cuda')
 
-def advanced_rag_retrieve(query, db, top_k_retrieval=5, top_k_rerank=3):
+def advanced_rag_retrieve(query, db, top_k_retrieval=20, top_k_rerank=3):
     """
     Stage 1: Vector Search (Fast, High Recall)
     Stage 2: Cross-Encoder Re-ranking (Slow, High Precision)
@@ -46,3 +47,7 @@ def advanced_rag_retrieve(query, db, top_k_retrieval=5, top_k_rerank=3):
 # Test the retrieval
 test_query = "What generates energy in the cell?"
 context_docs = advanced_rag_retrieve(test_query, vector_db)
+print("\nFinal Retrieved Contexts for Generation:")
+for i, doc in enumerate(context_docs, 1):
+    print(f"  Context {i}: {doc.page_content[:100]}...")
+    print("-" * 50)
