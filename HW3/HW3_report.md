@@ -14,12 +14,8 @@ and cross-encoder re-ranking, and (3) answer generation using a local LLM.
 
 ### Experimental Setup
 
-Since the Kaggle competition's Wikipedia corpus was not included in the provided data files,
-I constructed the knowledge base directly from the 200 training questions. Each question has
-five answer choices (A–E), and I treated each `(question_prompt + one answer option)` pair
-as a single document. This gives a corpus of **1,000 documents** covering diverse STEM topics.
-Querying with the question prompt and checking whether the correct option is retrieved allows
-clean measurement of retrieval quality (hit rate).
+The knowledge base was constructed directly from the provided `train.csv` dataset, which was downloaded from the official [Kaggle LLM Science Exam competition](https://www.kaggle.com/competitions/kaggle-llm-science-exam) and contains 200 science-related multiple-choice questions. Each question has five answer choices (A–E). To facilitate effective retrieval, I transformed the dataset by treating each `(question_prompt + one answer option)` pair as a separate, individual document. This transformation creates a corpus of **1,000 documents** covering diverse STEM topics.
+By querying the system with the pure question prompt, we can objectively measure the retrieval quality (Recall@3) by checking whether the document containing the correct answer option is successfully retrieved.
 
 **Models used:**
 - Embedding: `BAAI/bge-m3` (CUDA)
