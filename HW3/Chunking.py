@@ -7,6 +7,8 @@ import os
 
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_core.documents import Document
+from langchain_experimental.text_splitter import SemanticChunker
+from langchain_huggingface import HuggingFaceEmbeddings
 
 _DATA_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "dataset/train.csv")
 
@@ -56,10 +58,12 @@ docs_a_1000 = splitter_a_1000.split_documents(documents)
 print(f"Strategy A (Fixed | chunk_size=1000): Created {len(docs_a_1000)} chunks.")
 
 # --- Strategy B: Semantic/Larger Chunking ---
-# Larger chunks to preserve context (Paragraph level)
-splitter_b = RecursiveCharacterTextSplitter(
-    chunk_size=1000,
-    chunk_overlap=200
+# Use actual SemanticChunker
+embeddings = HuggingFaceEmbeddings(
+    model_name="BAAI/bge-m3",
+    model_kwargs={'device': 'cuda'},
+    encode_kwargs={'normalize_embeddings': True}
 )
+splitter_b = SemanticChunker(embeddings)
 docs_b = splitter_b.split_documents(documents)
 print(f"Strategy B (Semantic): Created {len(docs_b)} chunks.")

@@ -39,7 +39,7 @@ else:
 
 print("Handling ChromaDB Index... (Semantic Chunking)")
 vector_db_semantic = Chroma(
-    collection_name="semantic_chunk_size_1000",
+    collection_name="semantic_chunk",
     embedding_function=embeddings,
     persist_directory="./chroma_db"
 )

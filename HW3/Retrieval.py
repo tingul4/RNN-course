@@ -114,6 +114,41 @@ def run_experiment_2(db, _DATA_PATH="dataset/train.csv", top_k_retrieval=20, top
             break
         print("\n" + "-" * 50)
 
+def evaluate_hit_rate():
+    print("\n🔍 Hit Rate Evaluation...")
+    # For simplicity, we will evaluate on the first 50 examples of the train.csv dataset.
+    df = pd.read_csv("dataset/train.csv").head(50)
+    
+    results = {}
+    for db_name, db in [("Fixed_500", vector_db_fixed_500), ("Semantic", vector_db_semantic)]:
+        hits_stage1 = 0
+        hits_stage2 = 0
+        for _, row in df.iterrows():
+            query = row['prompt']
+            q_id = int(row['id'])
+            
+            # Stage 1
+            initial_docs = db.similarity_search(query, k=20)
+            top3_stage1 = initial_docs[:3]
+            if any(doc.metadata.get('is_correct') and doc.metadata.get('question_id') == q_id for doc in top3_stage1):
+                hits_stage1 += 1
+                
+            # Stage 2
+            doc_texts = [d.page_content for d in initial_docs]
+            pairs = [[query, doc_text] for doc_text in doc_texts]
+            scores = reranker.predict(pairs)
+            scored_docs = list(zip(initial_docs, scores))
+            scored_docs_sorted = sorted(scored_docs, key=lambda x: x[1], reverse=True)
+            top3_stage2 = [doc for doc, score in scored_docs_sorted[:3]]
+            
+            if any(doc.metadata.get('is_correct') and doc.metadata.get('question_id') == q_id for doc in top3_stage2):
+                hits_stage2 += 1
+                
+        results[db_name] = {
+            "Stage 1": hits_stage1 / len(df),
+            "Stage 2": hits_stage2 / len(df)
+        }
+    print(results)
 
 if __name__ == "__main__":
     # run experiment 1
@@ -121,3 +156,5 @@ if __name__ == "__main__":
     run_experiment_1(test_query, vector_db_semantic)
     # run experiment 2
     run_experiment_2(vector_db_semantic)
+    # calculate hit rate
+    evaluate_hit_rate()
