@@ -18,7 +18,7 @@ def load_corpus(path=_DATA_PATH):
     corpus = []
     for _, row in df.iterrows():
         for opt in ["A", "B", "C", "D", "E"]:
-            text = f"{row['prompt'].strip()}\n\nOption {opt}: {str(row[opt]).strip()}"
+            text = f"{row['prompt'].strip()}\nOption {opt}: {str(row[opt]).strip()}\n"
             corpus.append(Document(
                 page_content=text,
                 metadata={"question_id": int(row["id"]), "option": opt,

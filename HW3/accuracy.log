@@ -1,0 +1,1506 @@
+
+🔍 Accuracy Evaluation (with RAG)...
+
+Query: Which of the following statements accurately describes the impact of Modified Newtonian Dynamics (MOND) on the observed "missing baryonic mass" discrepancy in galaxy clusters?
+[Latency] Vector Search: 0.1695 seconds
+Stage 1: Retrieved 20 candidates via Vector Search.
+Stage 1: Top Results:
+  [1] Score: 0.2950
+  Text: Which of the following statements accurately describes the impact of Modified Newtonian Dynamics (MOND) on the observed "missing baryonic mass" discrepancy in galaxy clusters? Option D: MOND is a theory that reduces the discrepancy between the observed missing baryonic mass in galaxy clusters and the measured velocity dispersions from a factor of around 10 to a factor of about 2....
+  ------------------------
+  [2] Score: 0.2994
+  Text: Which of the following statements accurately describes the impact of Modified Newtonian Dynamics (MOND) on the observed "missing baryonic mass" discrepancy in galaxy clusters? Option B: MOND is a theory that increases the discrepancy between the observed missing baryonic mass in galaxy clusters and the measured velocity dispersions from a factor of around 10 to a factor of about 20....
+  ------------------------
+  [3] Score: 0.3447
+  Text: Which of the following statements accurately describes the impact of Modified Newtonian Dynamics (MOND) on the observed "missing baryonic mass" discrepancy in galaxy clusters? Option C: MOND is a theory that explains the missing baryonic mass in galaxy clusters that was previously considered dark matter by demonstrating that the mass is in the form of neutrinos and axions....
+  ------------------------
+[Latency] Re-ranking (Cross-Encoder): 0.0402 seconds
+Stage 2: Top Re-ranked Results:
+  [1] Score: 9.4366
+  Text: Which of the following statements accurately describes the impact of Modified Newtonian Dynamics (MOND) on the observed "missing baryonic mass" discrepancy in galaxy clusters? Option B: MOND is a theory that increases the discrepancy between the observed missing baryonic mass in galaxy clusters and the measured velocity dispersions from a factor of around 10 to a factor of about 20....
+  ------------------------
+  [2] Score: 9.4013
+  Text: Which of the following statements accurately describes the impact of Modified Newtonian Dynamics (MOND) on the observed "missing baryonic mass" discrepancy in galaxy clusters? Option D: MOND is a theory that reduces the discrepancy between the observed missing baryonic mass in galaxy clusters and the measured velocity dispersions from a factor of around 10 to a factor of about 2....
+  ------------------------
+  [3] Score: 9.2961
+  Text: Which of the following statements accurately describes the impact of Modified Newtonian Dynamics (MOND) on the observed "missing baryonic mass" discrepancy in galaxy clusters? Option C: MOND is a theory that explains the missing baryonic mass in galaxy clusters that was previously considered dark matter by demonstrating that the mass is in the form of neutrinos and axions....
+  ------------------------
+
+Generating Answer...
+[Latency] LLM Generation: 12.0876 seconds
+Q ID: 0 | True: D | Pred: B | Raw: 'B' | Correct: False
+
+Query: Which of the following is an accurate definition of dynamic scaling in self-similar systems?
+[Latency] Vector Search: 0.0371 seconds
+Stage 1: Retrieved 20 candidates via Vector Search.
+Stage 1: Top Results:
+  [1] Score: 0.5327
+  Text: Which of the following is an accurate definition of dynamic scaling in self-similar systems? Option D: Dynamic scaling refers to the non-evolution of self-similar systems, where data obtained from snapshots at fixed times is dissimilar to the respective data taken from snapshots of any earlier or later time....
+  ------------------------
+  [2] Score: 0.5341
+  Text: Which of the following is an accurate definition of dynamic scaling in self-similar systems? Option C: Dynamic scaling refers to the evolution of self-similar systems, where data obtained from snapshots at fixed times is dissimilar to the respective data taken from snapshots of any earlier or later time....
+  ------------------------
+  [3] Score: 0.5374
+  Text: Which of the following is an accurate definition of dynamic scaling in self-similar systems? Option A: Dynamic scaling refers to the evolution of self-similar systems, where data obtained from snapshots at fixed times exhibits similarity to the respective data taken from snapshots of any earlier or later time....
+  ------------------------
+[Latency] Re-ranking (Cross-Encoder): 0.0265 seconds
+Stage 2: Top Re-ranked Results:
+  [1] Score: 9.6969
+  Text: Which of the following is an accurate definition of dynamic scaling in self-similar systems? Option D: Dynamic scaling refers to the non-evolution of self-similar systems, where data obtained from snapshots at fixed times is dissimilar to the respective data taken from snapshots of any earlier or later time....
+  ------------------------
+  [2] Score: 9.6511
+  Text: Which of the following is an accurate definition of dynamic scaling in self-similar systems? Option A: Dynamic scaling refers to the evolution of self-similar systems, where data obtained from snapshots at fixed times exhibits similarity to the respective data taken from snapshots of any earlier or later time....
+  ------------------------
+  [3] Score: 9.6318
+  Text: Which of the following is an accurate definition of dynamic scaling in self-similar systems? Option B: Dynamic scaling refers to the non-evolution of self-similar systems, where data obtained from snapshots at fixed times is similar to the respective data taken from snapshots of any earlier or later time....
+  ------------------------
+
+Generating Answer...
+[Latency] LLM Generation: 0.5780 seconds
+Q ID: 1 | True: A | Pred: A | Raw: 'A' | Correct: True
+
+Query: Which of the following statements accurately describes the origin and significance of the triskeles symbol?
+[Latency] Vector Search: 0.0339 seconds
+Stage 1: Retrieved 20 candidates via Vector Search.
+Stage 1: Top Results:
+  [1] Score: 0.0000
+  Text: Which of the following statements accurately describes the origin and significance of the triskeles symbol?...
+  ------------------------
+  [2] Score: 0.0000
+  Text: Which of the following statements accurately describes the origin and significance of the triskeles symbol?...
+  ------------------------
+  [3] Score: 0.6033
+  Text: Which of the following statements accurately describes the origin and significance of the triskeles symbol? Option C: The triskeles symbol is a representation of a triple goddess, reconstructed by the rulers of Syracuse, who adopted it as an emblem. Its significance lies in the fact that it represents the Greek name for Sicily, Trinacria, which contains the element "tria," meaning three....
+  ------------------------
+[Latency] Re-ranking (Cross-Encoder): 0.0309 seconds
+Stage 2: Top Re-ranked Results:
+  [1] Score: 9.9196
+  Text: Which of the following statements accurately describes the origin and significance of the triskeles symbol? Option C: The triskeles symbol is a representation of a triple goddess, reconstructed by the rulers of Syracuse, who adopted it as an emblem. Its significance lies in the fact that it represents the Greek name for Sicily, Trinacria, which contains the element "tria," meaning three....
+  ------------------------
+  [2] Score: 9.7785
+  Text: Which of the following statements accurately describes the origin and significance of the triskeles symbol? Option E: The triskeles symbol is a representation of the Greek goddess Hecate, reconstructed by the rulers of Syracuse. Its adoption as an emblem was due to its cultural significance, as it represented the ancient Greek name for Sicily, Trinacria....
+  ------------------------
+  [3] Score: 9.5750
+  Text: Which of the following statements accurately describes the origin and significance of the triskeles symbol? Option D: The triskeles symbol represents three interlocked spiral arms, which became an emblem for the rulers of Syracuse. Its usage in modern flags of Sicily is due to the island's rich cultural heritage, which dates back to ancient times....
+  ------------------------
+
+Generating Answer...
+[Latency] LLM Generation: 0.6610 seconds
+Q ID: 2 | True: A | Pred: C | Raw: 'C' | Correct: False
+
+Query: What is the significance of regularization in terms of renormalization problems in physics?
+[Latency] Vector Search: 0.0346 seconds
+Stage 1: Retrieved 20 candidates via Vector Search.
+Stage 1: Top Results:
+  [1] Score: 0.6272
+  Text: What is the significance of regularization in terms of renormalization problems in physics? Option E: Regularizing the mass-energy of an electron with an infinite radius is essential for explaining how a system below a certain size operates....
+  ------------------------
+  [2] Score: 0.6401
+  Text: What is the significance of regularization in terms of renormalization problems in physics? Option A: Regularizing the mass-energy of an electron with a finite radius can theoretically simplify calculations involving infinities or singularities, thereby providing explanations that would otherwise be impossible to achieve....
+  ------------------------
+  [3] Score: 0.6474
+  Text: What is the significance of regularization in terms of renormalization problems in physics? Option B: Regularizing the mass-energy of an electron with an infinite radius allows for the breakdown of a theory that is valid under one set of conditions....
+  ------------------------
+[Latency] Re-ranking (Cross-Encoder): 0.0309 seconds
+Stage 2: Top Re-ranked Results:
+  [1] Score: 9.5021
+  Text: What is the significance of regularization in terms of renormalization problems in physics? Option C: Regularizing the mass-energy of an electron with a finite radius is a means of demonstrating that a system below a certain size can be explained without the need for further calculations....
+  ------------------------
+  [2] Score: 9.4262
+  Text: What is the significance of regularization in terms of renormalization problems in physics? Option A: Regularizing the mass-energy of an electron with a finite radius can theoretically simplify calculations involving infinities or singularities, thereby providing explanations that would otherwise be impossible to achieve....
+  ------------------------
+  [3] Score: 9.2456
+  Text: What is the significance of regularization in terms of renormalization problems in physics? Option B: Regularizing the mass-energy of an electron with an infinite radius allows for the breakdown of a theory that is valid under one set of conditions....
+  ------------------------
+
+Generating Answer...
+[Latency] LLM Generation: 0.5305 seconds
+Q ID: 3 | True: C | Pred: A | Raw: 'A' | Correct: False
+
+Query: Which of the following statements accurately describes the relationship between the dimensions of a diffracting object and the angular spacing of features in the diffraction pattern?
+[Latency] Vector Search: 0.0370 seconds
+Stage 1: Retrieved 20 candidates via Vector Search.
+Stage 1: Top Results:
+  [1] Score: 0.3257
+  Text: Which of the following statements accurately describes the relationship between the dimensions of a diffracting object and the angular spacing of features in the diffraction pattern? Option D: The angular spacing of features in the diffraction pattern is inversely proportional to the dimensions of the object causing the diffraction....
+  ------------------------
+  [2] Score: 0.3290
+  Text: Which of the following statements accurately describes the relationship between the dimensions of a diffracting object and the angular spacing of features in the diffraction pattern? Option B: The angular spacing of features in the diffraction pattern is directly proportional to the dimensions of the object causing the diffraction....
+  ------------------------
+  [3] Score: 0.3555
+  Text: Which of the following statements accurately describes the relationship between the dimensions of a diffracting object and the angular spacing of features in the diffraction pattern? Option C: The angular spacing of features in the diffraction pattern is independent of the dimensions of the object causing the diffraction....
+  ------------------------
+[Latency] Re-ranking (Cross-Encoder): 0.0310 seconds
+Stage 2: Top Re-ranked Results:
+  [1] Score: 9.6491
+  Text: Which of the following statements accurately describes the relationship between the dimensions of a diffracting object and the angular spacing of features in the diffraction pattern? Option D: The angular spacing of features in the diffraction pattern is inversely proportional to the dimensions of the object causing the diffraction....
+  ------------------------
+  [2] Score: 9.5960
+  Text: Which of the following statements accurately describes the relationship between the dimensions of a diffracting object and the angular spacing of features in the diffraction pattern? Option A: The angular spacing of features in the diffraction pattern is indirectly proportional to the dimensions of the object causing the diffraction....
+  ------------------------
+  [3] Score: 9.5859
+  Text: Which of the following statements accurately describes the relationship between the dimensions of a diffracting object and the angular spacing of features in the diffraction pattern? Option E: The angular spacing of features in the diffraction pattern is directly proportional to the square root of the dimensions of the object causing the diffraction....
+  ------------------------
+
+Generating Answer...
+[Latency] LLM Generation: 0.6037 seconds
+Q ID: 4 | True: D | Pred: D | Raw: 'D' | Correct: True
+
+Query: Which of the following statements accurately depicts the relationship between Gauss's law, electric flux, electric field, and symmetry in electric fields?
+[Latency] Vector Search: 0.0343 seconds
+Stage 1: Retrieved 20 candidates via Vector Search.
+Stage 1: Top Results:
+  [1] Score: 0.4390
+  Text: Which of the following statements accurately depicts the relationship between Gauss's law, electric flux, electric field, and symmetry in electric fields? Option D: Gauss's law only holds for electric fields with cylindrical symmetry, like those of a straight long wire; it is not applicable to fields with other types of symmetry. Electric flux, which measures the total electric field across a closed surface, is influenced by all charges within the surface as well as by those located outside it....
+  ------------------------
+  [2] Score: 0.4730
+  Text: Which of the following statements accurately depicts the relationship between Gauss's law, electric flux, electric field, and symmetry in electric fields? Option C: Gauss's law, which applies equally to all electric fields, is typically most useful when dealing with symmetric field configurations, like those with spherical or cylindrical symmetry, since it makes it easier to calculate the total electric flux. Electric flux, an expression of the total electric field through a closed surface, is unaffected by charges outside the surface, while net electric field, E, may be influenced by charges located outside the closed surface....
+  ------------------------
+  [3] Score: 0.4780
+  Text: Which of the following statements accurately depicts the relationship between Gauss's law, electric flux, electric field, and symmetry in electric fields? Option E: Gauss's law, which holds for all situations, is most beneficial when applied to electric fields that exhibit higher degrees of symmetry, like those with cylindrical and spherical symmetry....
+  ------------------------
+[Latency] Re-ranking (Cross-Encoder): 0.0383 seconds
+Stage 2: Top Re-ranked Results:
+  [1] Score: 9.8903
+  Text: Which of the following statements accurately depicts the relationship between Gauss's law, electric flux, electric field, and symmetry in electric fields? Option D: Gauss's law only holds for electric fields with cylindrical symmetry, like those of a straight long wire; it is not applicable to fields with other types of symmetry. Electric flux, which measures the total electric field across a closed surface, is influenced by all charges within the surface as well as by those located outside it....
+  ------------------------
+  [2] Score: 9.7413
+  Text: Which of the following statements accurately depicts the relationship between Gauss's law, electric flux, electric field, and symmetry in electric fields? Option A: Gauss's law holds only for situations involving symmetric electric fields, like those with spherical or cylindrical symmetry, and doesn't apply to other field types....
+  ------------------------
+  [3] Score: 9.7097
+  Text: Which of the following statements accurately depicts the relationship between Gauss's law, electric flux, electric field, and symmetry in electric fields? Option C: Gauss's law, which applies equally to all electric fields, is typically most useful when dealing with symmetric field configurations, like those with spherical or cylindrical symmetry, since it makes it easier to calculate the total electric flux. Electric flux, an expression of the total electric field through a closed surface, is unaffected by charges outside the surface, while net electric field, E, may be influenced by charges located outside the closed surface....
+  ------------------------
+
+Generating Answer...
+[Latency] LLM Generation: 0.7352 seconds
+Q ID: 5 | True: B | Pred: C | Raw: 'C' | Correct: False
+
+Query: Which of the following statements accurately describes the dimension of an object in a CW complex?
+[Latency] Vector Search: 0.0379 seconds
+Stage 1: Retrieved 20 candidates via Vector Search.
+Stage 1: Top Results:
+  [1] Score: 0.0000
+  Text: Which of the following statements accurately describes the dimension of an object in a CW complex?...
+  ------------------------
+  [2] Score: 0.0000
+  Text: Which of the following statements accurately describes the dimension of an object in a CW complex?...
+  ------------------------
+  [3] Score: 0.0000
+  Text: Which of the following statements accurately describes the dimension of an object in a CW complex?...
+  ------------------------
+[Latency] Re-ranking (Cross-Encoder): 0.0314 seconds
+Stage 2: Top Re-ranked Results:
+  [1] Score: 10.1281
+  Text: Which of the following statements accurately describes the dimension of an object in a CW complex? Option A: The dimension of an object in a CW complex is the largest n for which the n-skeleton is nontrivial, where the empty set is considered to have dimension -1 and the boundary of a discrete set of points is the empty set....
+  ------------------------
+  [2] Score: 7.8920
+  Text: Which of the following statements accurately describes the dimension of an object in a CW complex?...
+  ------------------------
+  [3] Score: 7.8920
+  Text: Which of the following statements accurately describes the dimension of an object in a CW complex?...
+  ------------------------
+
+Generating Answer...
+[Latency] LLM Generation: 0.5753 seconds
+Q ID: 6 | True: A | Pred: A | Raw: 'A' | Correct: True
+
+Query: Which of the following statements accurately describes the blocking temperature of an antiferromagnetic layer in a spin valve?
+[Latency] Vector Search: 0.0359 seconds
+Stage 1: Retrieved 20 candidates via Vector Search.
+Stage 1: Top Results:
+  [1] Score: 0.0000
+  Text: Which of the following statements accurately describes the blocking temperature of an antiferromagnetic layer in a spin valve?...
+  ------------------------
+  [2] Score: 0.0000
+  Text: Which of the following statements accurately describes the blocking temperature of an antiferromagnetic layer in a spin valve?...
+  ------------------------
+  [3] Score: 0.3492
+  Text: Which of the following statements accurately describes the blocking temperature of an antiferromagnetic layer in a spin valve? Option D: The blocking temperature of an antiferromagnetic layer in a spin valve is the temperature at or above which the layer ceases to prevent the orientation of an adjacent ferromagnetic layer....
+  ------------------------
+[Latency] Re-ranking (Cross-Encoder): 0.0328 seconds
+Stage 2: Top Re-ranked Results:
+  [1] Score: 9.9351
+  Text: Which of the following statements accurately describes the blocking temperature of an antiferromagnetic layer in a spin valve? Option E: The blocking temperature of an antiferromagnetic layer in a spin valve is the temperature at which the ferromagnetic layer loses its ability to "pin" the magnetization direction of an adjacent antiferromagnetic layer....
+  ------------------------
+  [2] Score: 9.8461
+  Text: Which of the following statements accurately describes the blocking temperature of an antiferromagnetic layer in a spin valve? Option B: The blocking temperature of an antiferromagnetic layer in a spin valve is the temperature below which the layer loses its ability to "pin" the magnetization direction of an adjacent ferromagnetic layer....
+  ------------------------
+  [3] Score: 9.7905
+  Text: Which of the following statements accurately describes the blocking temperature of an antiferromagnetic layer in a spin valve? Option D: The blocking temperature of an antiferromagnetic layer in a spin valve is the temperature at or above which the layer ceases to prevent the orientation of an adjacent ferromagnetic layer....
+  ------------------------
+
+Generating Answer...
+[Latency] LLM Generation: 0.6065 seconds
+Q ID: 7 | True: D | Pred: B | Raw: 'B' | Correct: False
+
+Query: What is the term used in astrophysics to describe light-matter interactions resulting in energy shifts in the radiation field?
+[Latency] Vector Search: 0.0354 seconds
+Stage 1: Retrieved 20 candidates via Vector Search.
+Stage 1: Top Results:
+  [1] Score: 0.3208
+  Text: What is the term used in astrophysics to describe light-matter interactions resulting in energy shifts in the radiation field? Option B: Redshifting...
+  ------------------------
+  [2] Score: 0.3228
+  Text: What is the term used in astrophysics to describe light-matter interactions resulting in energy shifts in the radiation field? Option D: Whitening...
+  ------------------------
+  [3] Score: 0.3289
+  Text: What is the term used in astrophysics to describe light-matter interactions resulting in energy shifts in the radiation field? Option C: Reddening...
+  ------------------------
+[Latency] Re-ranking (Cross-Encoder): 0.0263 seconds
+Stage 2: Top Re-ranked Results:
+  [1] Score: 8.9370
+  Text: What is the term used in astrophysics to describe light-matter interactions resulting in energy shifts in the radiation field? Option E: Yellowing...
+  ------------------------
+  [2] Score: 8.9172
+  Text: What is the term used in astrophysics to describe light-matter interactions resulting in energy shifts in the radiation field? Option B: Redshifting...
+  ------------------------
+  [3] Score: 8.7650
+  Text: What is the term used in astrophysics to describe light-matter interactions resulting in energy shifts in the radiation field? Option A: Blueshifting...
+  ------------------------
+
+Generating Answer...
+[Latency] LLM Generation: 0.3759 seconds
+Q ID: 8 | True: C | Pred: B | Raw: 'B' | Correct: False
+
+Query: What is the role of axioms in a formal theory?
+[Latency] Vector Search: 0.0224 seconds
+Stage 1: Retrieved 20 candidates via Vector Search.
+Stage 1: Top Results:
+  [1] Score: 0.5333
+  Text: What is the role of axioms in a formal theory? Option E: The axioms in a formal theory are added to prove that the statements derived from the theory are true, irrespective of their validity in the real world....
+  ------------------------
+  [2] Score: 0.5591
+  Text: What is the role of axioms in a formal theory? Option B: Axioms are supplementary statements added to a formal theory that break down otherwise complex statements into more simple ones....
+  ------------------------
+  [3] Score: 0.5612
+  Text: What is the role of axioms in a formal theory? Option A: Basis statements called axioms form the foundation of a formal theory and, together with the deducing rules, help in deriving a set of statements called theorems using proof theory....
+  ------------------------
+[Latency] Re-ranking (Cross-Encoder): 0.0161 seconds
+Stage 2: Top Re-ranked Results:
+  [1] Score: 10.0900
+  Text: What is the role of axioms in a formal theory? Option E: The axioms in a formal theory are added to prove that the statements derived from the theory are true, irrespective of their validity in the real world....
+  ------------------------
+  [2] Score: 10.0687
+  Text: What is the role of axioms in a formal theory? Option B: Axioms are supplementary statements added to a formal theory that break down otherwise complex statements into more simple ones....
+  ------------------------
+  [3] Score: 9.8703
+  Text: What is the role of axioms in a formal theory? Option C: Axioms are redundant statements that can be derived from other statements in a formal theory, providing additional perspective to theorems derived from the theory....
+  ------------------------
+
+Generating Answer...
+[Latency] LLM Generation: 0.5157 seconds
+Q ID: 9 | True: A | Pred: A | Raw: 'A' | Correct: True
+
+Query: What did Fresnel predict and verify with regards to total internal reflections?
+[Latency] Vector Search: 0.0261 seconds
+Stage 1: Retrieved 20 candidates via Vector Search.
+Stage 1: Top Results:
+  [1] Score: 0.5641
+  Text: What did Fresnel predict and verify with regards to total internal reflections? Option D: Fresnel predicted and verified that two total internal reflections at 68°27' would give an accurate linear polarization if one of the reflections had water as the external medium and the other had air, but not if the reflecting surfaces were all wet or all dry....
+  ------------------------
+  [2] Score: 0.5866
+  Text: What did Fresnel predict and verify with regards to total internal reflections? Option A: Fresnel predicted and verified that three total internal reflections at 75°27' would give a precise circular polarization if two of the reflections had water as the external medium and the third had air, but not if the reflecting surfaces were all wet or all dry....
+  ------------------------
+  [3] Score: 0.5870
+  Text: What did Fresnel predict and verify with regards to total internal reflections? Option E: Fresnel predicted and verified that four total internal reflections at 68°27' would give a precise circular polarization if two of the reflections had water as the external medium while the other two had air, but not if the reflecting surfaces were all wet or all dry....
+  ------------------------
+[Latency] Re-ranking (Cross-Encoder): 0.0171 seconds
+Stage 2: Top Re-ranked Results:
+  [1] Score: 10.2613
+  Text: What did Fresnel predict and verify with regards to total internal reflections? Option A: Fresnel predicted and verified that three total internal reflections at 75°27' would give a precise circular polarization if two of the reflections had water as the external medium and the third had air, but not if the reflecting surfaces were all wet or all dry....
+  ------------------------
+  [2] Score: 10.1055
+  Text: What did Fresnel predict and verify with regards to total internal reflections? Option D: Fresnel predicted and verified that two total internal reflections at 68°27' would give an accurate linear polarization if one of the reflections had water as the external medium and the other had air, but not if the reflecting surfaces were all wet or all dry....
+  ------------------------
+  [3] Score: 10.0865
+  Text: What did Fresnel predict and verify with regards to total internal reflections? Option E: Fresnel predicted and verified that four total internal reflections at 68°27' would give a precise circular polarization if two of the reflections had water as the external medium while the other two had air, but not if the reflecting surfaces were all wet or all dry....
+  ------------------------
+
+Generating Answer...
+[Latency] LLM Generation: 0.5336 seconds
+Q ID: 10 | True: E | Pred: E | Raw: 'E' | Correct: True
+
+Query: What is the relationship between the Wigner function and the density matrix operator?
+[Latency] Vector Search: 0.0234 seconds
+Stage 1: Retrieved 20 candidates via Vector Search.
+Stage 1: Top Results:
+  [1] Score: 0.5074
+  Text: What is the relationship between the Wigner function and the density matrix operator? Option C: The Wigner function W(x, p) is the derivative of the density matrix operator ρ̂ with respect to the phase space coordinate....
+  ------------------------
+  [2] Score: 0.5117
+  Text: What is the relationship between the Wigner function and the density matrix operator? Option E: The Wigner function W(x, p) is the time derivative of the density matrix operator ρ̂ with respect to the phase space coordinate....
+  ------------------------
+  [3] Score: 0.5283
+  Text: What is the relationship between the Wigner function and the density matrix operator? Option B: The Wigner function W(x, p) is a source function used for the density matrix operator ρ̂ and the product of these two functions creates the phase space wave function g(x, p)....
+  ------------------------
+[Latency] Re-ranking (Cross-Encoder): 0.0171 seconds
+Stage 2: Top Re-ranked Results:
+  [1] Score: 10.0709
+  Text: What is the relationship between the Wigner function and the density matrix operator? Option A: The Wigner function W(x, p) is the Wigner transform of the density matrix operator ρ̂, and the trace of an operator with the density matrix Wigner-transforms to the equivalent phase-space integral overlap of g(x,p) with the Wigner function....
+  ------------------------
+  [2] Score: 9.6051
+  Text: What is the relationship between the Wigner function and the density matrix operator? Option D: The Wigner function W(x, p) represents the Hamiltonian H(x,p) of the density matrix operator ρ̂, while the Moyal bracket {{⋅, ⋅}} represents the Poisson bracket in the phase space....
+  ------------------------
+  [3] Score: 9.5998
+  Text: What is the relationship between the Wigner function and the density matrix operator? Option C: The Wigner function W(x, p) is the derivative of the density matrix operator ρ̂ with respect to the phase space coordinate....
+  ------------------------
+
+Generating Answer...
+[Latency] LLM Generation: 0.5370 seconds
+Q ID: 11 | True: A | Pred: A | Raw: 'A' | Correct: True
+
+Query: What is one of the examples of the models proposed by cosmologists and theoretical physicists without the cosmological or Copernican principles that can be used to address specific issues in the Lambda-CDM model and distinguish between current models and other possible models?
+[Latency] Vector Search: 0.0287 seconds
+Stage 1: Retrieved 20 candidates via Vector Search.
+Stage 1: Top Results:
+  [1] Score: 0.3734
+  Text: What is one of the examples of the models proposed by cosmologists and theoretical physicists without the cosmological or Copernican principles that can be used to address specific issues in the Lambda-CDM model and distinguish between current models and other possible models? Option C: Inhomogeneous cosmology, which models the universe as an extremely large, low-density void, instead of using the concept of dark energy....
+  ------------------------
+  [2] Score: 0.4614
+  Text: What is one of the examples of the models proposed by cosmologists and theoretical physicists without the cosmological or Copernican principles that can be used to address specific issues in the Lambda-CDM model and distinguish between current models and other possible models? Option A: The Copernican principle, which proposes that Earth, the Solar System, and the Milky Way are not at the centre of the universe, but instead, the universe is expanding equally in all directions....
+  ------------------------
+  [3] Score: 0.4694
+  Text: What is one of the examples of the models proposed by cosmologists and theoretical physicists without the cosmological or Copernican principles that can be used to address specific issues in the Lambda-CDM model and distinguish between current models and other possible models? Option E: The principle of dark energy, which proposes that a new form of energy, not previously detected, is responsible for the acceleration of the expansion of the universe....
+  ------------------------
+[Latency] Re-ranking (Cross-Encoder): 0.0273 seconds
+Stage 2: Top Re-ranked Results:
+  [1] Score: 9.6236
+  Text: What is one of the examples of the models proposed by cosmologists and theoretical physicists without the cosmological or Copernican principles that can be used to address specific issues in the Lambda-CDM model and distinguish between current models and other possible models? Option A: The Copernican principle, which proposes that Earth, the Solar System, and the Milky Way are not at the centre of the universe, but instead, the universe is expanding equally in all directions....
+  ------------------------
+  [2] Score: 9.5405
+  Text: What is one of the examples of the models proposed by cosmologists and theoretical physicists without the cosmological or Copernican principles that can be used to address specific issues in the Lambda-CDM model and distinguish between current models and other possible models? Option D: The cosmological principle, which proposes that Earth, the Solar System, and the Milky Way are at the centre of the universe....
+  ------------------------
+  [3] Score: 9.4970
+  Text: What is one of the examples of the models proposed by cosmologists and theoretical physicists without the cosmological or Copernican principles that can be used to address specific issues in the Lambda-CDM model and distinguish between current models and other possible models? Option C: Inhomogeneous cosmology, which models the universe as an extremely large, low-density void, instead of using the concept of dark energy....
+  ------------------------
+
+Generating Answer...
+[Latency] LLM Generation: 0.6673 seconds
+Q ID: 12 | True: C | Pred: C | Raw: 'C' | Correct: True
+
+Query: What is the Roche limit?
+[Latency] Vector Search: 0.0393 seconds
+Stage 1: Retrieved 20 candidates via Vector Search.
+Stage 1: Top Results:
+  [1] Score: 0.7077
+  Text: What is the Roche limit? Option E: The Roche limit is the distance at which tidal effects would cause an object to break apart due to differential force from the planet overcoming the attraction of the parts of the object for one another, which depends on the object's density and composition, as well as the mass and size of the planet....
+  ------------------------
+  [2] Score: 0.7134
+  Text: What is the Roche limit? Option A: The Roche limit is the distance at which tidal effects would cause an object to rotate since the forces exerted by two massive bodies produce a torque on a third object....
+  ------------------------
+  [3] Score: 0.7632
+  Text: What is the Roche limit? Option C: The Roche limit is the distance at which tidal effects would cause a planet to disintegrate since differential force from an object overcomes the planet's core....
+  ------------------------
+[Latency] Re-ranking (Cross-Encoder): 0.0295 seconds
+Stage 2: Top Re-ranked Results:
+  [1] Score: 10.3671
+  Text: What is the Roche limit? Option E: The Roche limit is the distance at which tidal effects would cause an object to break apart due to differential force from the planet overcoming the attraction of the parts of the object for one another, which depends on the object's density and composition, as well as the mass and size of the planet....
+  ------------------------
+  [2] Score: 10.2452
+  Text: What is the Roche limit? Option A: The Roche limit is the distance at which tidal effects would cause an object to rotate since the forces exerted by two massive bodies produce a torque on a third object....
+  ------------------------
+  [3] Score: 10.1581
+  Text: What is the Roche limit? Option D: The Roche limit is the distance at which tidal effects would cause an object to disintegrate since differential force from a planet overcomes the attraction of the parts between them....
+  ------------------------
+
+Generating Answer...
+[Latency] LLM Generation: 0.5378 seconds
+Q ID: 13 | True: D | Pred: D | Raw: 'D' | Correct: True
+
+Query: What is Martin Heidegger's view on the relationship between time and human existence?
+[Latency] Vector Search: 0.0351 seconds
+Stage 1: Retrieved 20 candidates via Vector Search.
+Stage 1: Top Results:
+  [1] Score: 0.0000
+  Text: What is Martin Heidegger's view on the relationship between time and human existence?...
+  ------------------------
+  [2] Score: 0.0000
+  Text: What is Martin Heidegger's view on the relationship between time and human existence?...
+  ------------------------
+  [3] Score: 0.0000
+  Text: What is Martin Heidegger's view on the relationship between time and human existence?...
+  ------------------------
+[Latency] Re-ranking (Cross-Encoder): 0.0283 seconds
+Stage 2: Top Re-ranked Results:
+  [1] Score: 10.5730
+  Text: What is Martin Heidegger's view on the relationship between time and human existence? Option D: Martin Heidegger believes that the relationship between time and human existence is cyclical. The past and present are interconnected and the future is predetermined....
+  ------------------------
+  [2] Score: 10.0702
+  Text: What is Martin Heidegger's view on the relationship between time and human existence? Option E: Martin Heidegger believes that time is an illusion, and the past, present, and future are all happening simultaneously....
+  ------------------------
+  [3] Score: 8.1856
+  Text: What is Martin Heidegger's view on the relationship between time and human existence?...
+  ------------------------
+
+Generating Answer...
+[Latency] LLM Generation: 0.5016 seconds
+Q ID: 14 | True: B | Pred: B | Raw: 'B' | Correct: True
+
+Query: What is the "ultraviolet catastrophe"?
+[Latency] Vector Search: 0.0339 seconds
+Stage 1: Retrieved 20 candidates via Vector Search.
+Stage 1: Top Results:
+  [1] Score: 0.7141
+  Text: What is the "ultraviolet catastrophe"? Option B: It is the misbehavior of a formula for higher frequencies....
+  ------------------------
+  [2] Score: 0.7424
+  Text: What is the "ultraviolet catastrophe"? Option E: It is a disproven theory about the distribution of electromagnetic radiation....
+  ------------------------
+  [3] Score: 0.7679
+  Text: What is the "ultraviolet catastrophe"? Option D: It is a flaw in classical physics that results in the misallocation of energy....
+  ------------------------
+[Latency] Re-ranking (Cross-Encoder): 0.0281 seconds
+Stage 2: Top Re-ranked Results:
+  [1] Score: 9.1252
+  Text: What is the "ultraviolet catastrophe"? Option D: It is a flaw in classical physics that results in the misallocation of energy....
+  ------------------------
+  [2] Score: 9.0766
+  Text: What is the "ultraviolet catastrophe"? Option A: It is a phenomenon that occurs only in multi-mode vibration....
+  ------------------------
+  [3] Score: 8.9239
+  Text: What is the "ultraviolet catastrophe"? Option E: It is a disproven theory about the distribution of electromagnetic radiation....
+  ------------------------
+
+Generating Answer...
+[Latency] LLM Generation: 0.4660 seconds
+Q ID: 15 | True: B | Pred: D | Raw: 'D' | Correct: False
+
+Query: What is the most popular explanation for the shower-curtain effect?
+[Latency] Vector Search: 0.0508 seconds
+Stage 1: Retrieved 20 candidates via Vector Search.
+Stage 1: Top Results:
+  [1] Score: 0.3402
+  Text: What is the most popular explanation for the shower-curtain effect? Option D: The use of cold water...
+  ------------------------
+  [2] Score: 0.4672
+  Text: What is the most popular explanation for the shower-curtain effect? Option E: Bernoulli's principle...
+  ------------------------
+  [3] Score: 0.5338
+  Text: What is the most popular explanation for the shower-curtain effect? Option B: The decrease in velocity resulting in an increase in pressure...
+  ------------------------
+[Latency] Re-ranking (Cross-Encoder): 0.0388 seconds
+Stage 2: Top Re-ranked Results:
+  [1] Score: 9.5506
+  Text: What is the most popular explanation for the shower-curtain effect? Option B: The decrease in velocity resulting in an increase in pressure...
+  ------------------------
+  [2] Score: 9.4091
+  Text: What is the most popular explanation for the shower-curtain effect? Option A: The pressure differential between the inside and outside of the shower...
+  ------------------------
+  [3] Score: 9.2636
+  Text: What is the most popular explanation for the shower-curtain effect? Option C: The movement of air across the outside surface of the shower curtain...
+  ------------------------
+
+Generating Answer...
+[Latency] LLM Generation: 0.4378 seconds
+Q ID: 16 | True: E | Pred: A | Raw: 'A' | Correct: False
+
+Query: What is the butterfly effect?
+[Latency] Vector Search: 0.0531 seconds
+Stage 1: Retrieved 20 candidates via Vector Search.
+Stage 1: Top Results:
+  [1] Score: 0.6354
+  Text: What is the butterfly effect? Option D: The butterfly effect is a small push that is needed to set a massive sphere into motion when it is caused to roll down a slope starting from a point of unstable equilibrium....
+  ------------------------
+  [2] Score: 0.6357
+  Text: What is the butterfly effect, as defined by Lorenz in his book "The Essence of Chaos"? Option A: The butterfly effect is the phenomenon that a small change in the initial conditions of a dynamical system can cause subsequent states to differ greatly from the states that would have followed without the alteration, as defined by Einstein in his book "The Theory of Relativity."...
+  ------------------------
+  [3] Score: 0.6398
+  Text: What is the butterfly effect, as defined by Lorenz in his book "The Essence of Chaos"? Option C: The butterfly effect is the phenomenon that a small change in the initial conditions of a dynamical system can cause significant differences in subsequent states, as defined by Lorenz in his book "The Essence of Chaos."...
+  ------------------------
+[Latency] Re-ranking (Cross-Encoder): 0.0426 seconds
+Stage 2: Top Re-ranked Results:
+  [1] Score: 10.4922
+  Text: What is the butterfly effect? Option E: The butterfly effect is a phenomenon that highlights the difference between the application of the notion of causality in physics and a more general use of causality as represented by Mackie's INUS conditions....
+  ------------------------
+  [2] Score: 10.4209
+  Text: What is the butterfly effect? Option A: The butterfly effect is a physical cause that occurs when a massive sphere is caused to roll down a slope starting from a point of unstable equilibrium, and its velocity is assumed to be caused by the force of gravity accelerating it....
+  ------------------------
+  [3] Score: 10.3689
+  Text: What is the butterfly effect? Option B: The butterfly effect is a distributed causality that opens up the opportunity to understand the relationship between necessary and sufficient conditions in classical (Newtonian) physics....
+  ------------------------
+
+Generating Answer...
+[Latency] LLM Generation: 0.5612 seconds
+Q ID: 17 | True: E | Pred: E | Raw: 'E' | Correct: True
+
+Query: What is the 'reactive Leidenfrost effect' observed in non-volatile materials?
+[Latency] Vector Search: 0.0510 seconds
+Stage 1: Retrieved 20 candidates via Vector Search.
+Stage 1: Top Results:
+  [1] Score: 0.4563
+  Text: What is the 'reactive Leidenfrost effect' observed in non-volatile materials? Option D: The 'reactive Leidenfrost effect' is a phenomenon where solid particles float above cold surfaces and move erratically, observed in non-volatile materials....
+  ------------------------
+  [2] Score: 0.4610
+  Text: What is the 'reactive Leidenfrost effect' observed in non-volatile materials? Option A: The 'reactive Leidenfrost effect' is a phenomenon where solid particles float above hot surfaces and move erratically, observed in non-volatile materials....
+  ------------------------
+  [3] Score: 0.4791
+  Text: What is the 'reactive Leidenfrost effect' observed in non-volatile materials? Option E: The 'reactive Leidenfrost effect' is a phenomenon where solid particles sink into cold surfaces and move slowly, observed in non-volatile materials....
+  ------------------------
+[Latency] Re-ranking (Cross-Encoder): 0.0432 seconds
+Stage 2: Top Re-ranked Results:
+  [1] Score: 10.6481
+  Text: What is the 'reactive Leidenfrost effect' observed in non-volatile materials? Option A: The 'reactive Leidenfrost effect' is a phenomenon where solid particles float above hot surfaces and move erratically, observed in non-volatile materials....
+  ------------------------
+  [2] Score: 10.6387
+  Text: What is the 'reactive Leidenfrost effect' observed in non-volatile materials? Option D: The 'reactive Leidenfrost effect' is a phenomenon where solid particles float above cold surfaces and move erratically, observed in non-volatile materials....
+  ------------------------
+  [3] Score: 10.6029
+  Text: What is the 'reactive Leidenfrost effect' observed in non-volatile materials? Option C: The 'reactive Leidenfrost effect' is a phenomenon where solid particles sink into hot surfaces and move slowly, observed in non-volatile materials....
+  ------------------------
+
+Generating Answer...
+[Latency] LLM Generation: 0.5671 seconds
+Q ID: 18 | True: A | Pred: A | Raw: 'A' | Correct: True
+
+Query: What is reciprocal length or inverse length?
+[Latency] Vector Search: 0.0507 seconds
+Stage 1: Retrieved 20 candidates via Vector Search.
+Stage 1: Top Results:
+  [1] Score: 0.0000
+  Text: What is reciprocal length or inverse length?...
+  ------------------------
+  [2] Score: 0.0000
+  Text: What is reciprocal length or inverse length?...
+  ------------------------
+  [3] Score: 0.0000
+  Text: What is reciprocal length or inverse length?...
+  ------------------------
+[Latency] Re-ranking (Cross-Encoder): 0.0390 seconds
+Stage 2: Top Re-ranked Results:
+  [1] Score: 10.9556
+  Text: Option C: Reciprocal length or inverse length is a quantity or measurement used in biology and medicine. It is the reciprocal of mass, and common units used for this measurement include the reciprocal gram or inverse gram (symbol: g−1), the reciprocal kilogram or inverse kilogram (symbol: kg−1)....
+  ------------------------
+  [2] Score: 10.9536
+  Text: Option D: Reciprocal length or inverse length is a quantity or measurement used in economics and finance. It is the reciprocal of interest rate, and common units used for this measurement include the reciprocal percent or inverse percent (symbol: %−1), the reciprocal basis point or inverse basis point (symbol: bp−1)....
+  ------------------------
+  [3] Score: 10.9477
+  Text: Option E: Reciprocal length or inverse length is a quantity or measurement used in several branches of science and mathematics. It is the reciprocal of length, and common units used for this measurement include the reciprocal metre or inverse metre (symbol: m−1), the reciprocal centimetre or inverse centimetre (symbol: cm−1)....
+  ------------------------
+
+Generating Answer...
+[Latency] LLM Generation: 0.6485 seconds
+Q ID: 19 | True: E | Pred: C | Raw: 'C' | Correct: False
+
+Query: Which of the following statements is true about the categorization of planetary systems according to their orbital dynamics?
+[Latency] Vector Search: 0.0503 seconds
+Stage 1: Retrieved 20 candidates via Vector Search.
+Stage 1: Top Results:
+  [1] Score: 0.4917
+  Text: Which of the following statements is true about the categorization of planetary systems according to their orbital dynamics? Option A: Planetary systems cannot be categorized based on their orbital dynamics....
+  ------------------------
+  [2] Score: 0.5342
+  Text: Which of the following statements is true about the categorization of planetary systems according to their orbital dynamics? Option E: Planetary systems can only be categorized as hierarchical or non-hierarchical....
+  ------------------------
+  [3] Score: 0.5409
+  Text: Which of the following statements is true about the categorization of planetary systems according to their orbital dynamics? Option B: Planetary systems can be categorized as resonant, non-resonant-interacting, hierarchical, or some combination of these, but only based on the number of planets in the system....
+  ------------------------
+[Latency] Re-ranking (Cross-Encoder): 0.0496 seconds
+Stage 2: Top Re-ranked Results:
+  [1] Score: 9.6815
+  Text: Which of the following statements is true about the categorization of planetary systems according to their orbital dynamics? Option B: Planetary systems can be categorized as resonant, non-resonant-interacting, hierarchical, or some combination of these, but only based on the number of planets in the system....
+  ------------------------
+  [2] Score: 9.6511
+  Text: Which of the following statements is true about the categorization of planetary systems according to their orbital dynamics? Option D: Planetary systems can be categorized as resonant, non-resonant-interacting, hierarchical, or some combination of these....
+  ------------------------
+  [3] Score: 9.3410
+  Text: Which of the following statements is true about the categorization of planetary systems according to their orbital dynamics? Option C: Planetary systems can only be categorized as resonant or non-resonant-interacting....
+  ------------------------
+
+Generating Answer...
+[Latency] LLM Generation: 0.5191 seconds
+Q ID: 20 | True: D | Pred: D | Raw: 'D' | Correct: True
+
+Query: What is the propagation constant in sinusoidal waves?
+[Latency] Vector Search: 0.0561 seconds
+Stage 1: Retrieved 20 candidates via Vector Search.
+Stage 1: Top Results:
+  [1] Score: 0.5229
+  Text: What is the propagation constant in sinusoidal waves? Option A: The propagation constant is a measure of the amplitude of the sinusoidal wave that varies with distance....
+  ------------------------
+  [2] Score: 0.5455
+  Text: What is the propagation constant in sinusoidal waves? Option B: The propagation constant is a real number that remains constant with distance due to the phase change in the sinusoidal wave....
+  ------------------------
+  [3] Score: 0.5650
+  Text: What is the propagation constant in sinusoidal waves? Option E: The propagation constant is a complex number that remains constant with distance due to the phase change in the sinusoidal wave....
+  ------------------------
+[Latency] Re-ranking (Cross-Encoder): 0.0379 seconds
+Stage 2: Top Re-ranked Results:
+  [1] Score: 10.3585
+  Text: What is the propagation constant in sinusoidal waves? Option A: The propagation constant is a measure of the amplitude of the sinusoidal wave that varies with distance....
+  ------------------------
+  [2] Score: 10.3426
+  Text: What is the propagation constant in sinusoidal waves? Option E: The propagation constant is a complex number that remains constant with distance due to the phase change in the sinusoidal wave....
+  ------------------------
+  [3] Score: 10.2458
+  Text: What is the propagation constant in sinusoidal waves? Option D: The propagation constant is a complex number that varies with distance due to the phase change in the sinusoidal wave....
+  ------------------------
+
+Generating Answer...
+[Latency] LLM Generation: 0.4581 seconds
+Q ID: 21 | True: D | Pred: E | Raw: 'E' | Correct: False
+
+Query: What is the gravitomagnetic interaction?
+[Latency] Vector Search: 0.0504 seconds
+Stage 1: Retrieved 20 candidates via Vector Search.
+Stage 1: Top Results:
+  [1] Score: 0.5091
+  Text: What is the gravitomagnetic interaction? Option C: The gravitomagnetic interaction is a new force of nature generated by rotating matter, whose intensity is proportional to the rate of spin, according to the general theory of relativity....
+  ------------------------
+  [2] Score: 0.5184
+  Text: What is the gravitomagnetic interaction? Option A: The gravitomagnetic interaction is a force that is produced by the rotation of atoms in materials with linear properties that enhance time-varying gravitational fields....
+  ------------------------
+  [3] Score: 0.5333
+  Text: What is the gravitomagnetic interaction? Option E: The gravitomagnetic interaction is a force that is produced by the rotation of atoms in materials of different gravitational permeability....
+  ------------------------
+[Latency] Re-ranking (Cross-Encoder): 0.0396 seconds
+Stage 2: Top Re-ranked Results:
+  [1] Score: 10.6480
+  Text: What is the gravitomagnetic interaction? Option B: The gravitomagnetic interaction is a force that acts against gravity, produced by materials that have nonlinear properties that enhance time-varying gravitational fields....
+  ------------------------
+  [2] Score: 10.6389
+  Text: What is the gravitomagnetic interaction? Option A: The gravitomagnetic interaction is a force that is produced by the rotation of atoms in materials with linear properties that enhance time-varying gravitational fields....
+  ------------------------
+  [3] Score: 10.6348
+  Text: What is the gravitomagnetic interaction? Option C: The gravitomagnetic interaction is a new force of nature generated by rotating matter, whose intensity is proportional to the rate of spin, according to the general theory of relativity....
+  ------------------------
+
+Generating Answer...
+[Latency] LLM Generation: 0.5251 seconds
+Q ID: 22 | True: C | Pred: C | Raw: 'C' | Correct: True
+
+Query: What did Newton's manuscripts of the 1660s show?
+[Latency] Vector Search: 0.0407 seconds
+Stage 1: Retrieved 20 candidates via Vector Search.
+Stage 1: Top Results:
+  [1] Score: 0.6634
+  Text: What did Newton's manuscripts of the 1660s show? Option E: Newton's manuscripts showed that he was indebted to Descartes' work, published in 1644, for the concept of linear inertia....
+  ------------------------
+  [2] Score: 0.7351
+  Text: What did Newton's manuscripts of the 1660s show? Option D: Newton's manuscripts showed that he learned about the inverse square law from Hooke's private papers....
+  ------------------------
+  [3] Score: 0.7393
+  Text: What did Newton's manuscripts of the 1660s show? Option B: Newton's manuscripts did not show any evidence of combining tangential motion with the effects of radially directed force or endeavour....
+  ------------------------
+[Latency] Re-ranking (Cross-Encoder): 0.0392 seconds
+Stage 2: Top Re-ranked Results:
+  [1] Score: 10.2285
+  Text: What did Newton's manuscripts of the 1660s show? Option D: Newton's manuscripts showed that he learned about the inverse square law from Hooke's private papers....
+  ------------------------
+  [2] Score: 10.2129
+  Text: What did Newton's manuscripts of the 1660s show? Option E: Newton's manuscripts showed that he was indebted to Descartes' work, published in 1644, for the concept of linear inertia....
+  ------------------------
+  [3] Score: 9.9214
+  Text: What did Newton's manuscripts of the 1660s show? Option A: Newton learned about tangential motion and radially directed force or endeavour from Hooke's work....
+  ------------------------
+
+Generating Answer...
+[Latency] LLM Generation: 0.4744 seconds
+Q ID: 23 | True: C | Pred: A | Raw: 'A' | Correct: False
+
+Query: What is the decay energy for the free neutron decay process?
+[Latency] Vector Search: 0.0399 seconds
+Stage 1: Retrieved 20 candidates via Vector Search.
+Stage 1: Top Results:
+  [1] Score: 0.4370
+  Text: What is the decay energy for the free neutron decay process? Option B: 0.013 MeV...
+  ------------------------
+  [2] Score: 0.4413
+  Text: What is the decay energy for the free neutron decay process? Option C: 1,000 MeV...
+  ------------------------
+  [3] Score: 0.4467
+  Text: What is the decay energy for the free neutron decay process? Option D: 0.782 MeV...
+  ------------------------
+[Latency] Re-ranking (Cross-Encoder): 0.0244 seconds
+Stage 2: Top Re-ranked Results:
+  [1] Score: 7.3234
+  Text: What is the decay energy for the free neutron decay process? Option D: 0.782 MeV...
+  ------------------------
+  [2] Score: 7.1566
+  Text: What is the decay energy for the free neutron decay process? Option A: 0.013343 MeV...
+  ------------------------
+  [3] Score: 7.1353
+  Text: What is the decay energy for the free neutron decay process? Option E: 0.782343 MeV...
+  ------------------------
+
+Generating Answer...
+[Latency] LLM Generation: 0.4382 seconds
+Q ID: 24 | True: E | Pred: D | Raw: 'D' | Correct: False
+
+Query: What is Hesse's principle of transfer in geometry?
+[Latency] Vector Search: 0.0398 seconds
+Stage 1: Retrieved 20 candidates via Vector Search.
+Stage 1: Top Results:
+  [1] Score: 0.4252
+  Text: What is Hesse's principle of transfer in geometry? Option E: Hesse's principle of transfer is a concept in geometry that states that if the points of the projective line P1 are depicted by a rational normal curve in Pn, then the group of the projective transformations of Pn that preserve the curve is isomorphic to the group of the projective transformations of P1....
+  ------------------------
+  [2] Score: 0.5170
+  Text: What is Hesse's principle of transfer in geometry? Option C: Hesse's principle of transfer is a concept in physics that explains the transfer of energy from one object to another....
+  ------------------------
+  [3] Score: 0.5519
+  Text: What is Hesse's principle of transfer in geometry? Option D: Hesse's principle of transfer is a concept in economics that explains the transfer of wealth from one individual to another....
+  ------------------------
+[Latency] Re-ranking (Cross-Encoder): 0.0446 seconds
+Stage 2: Top Re-ranked Results:
+  [1] Score: 11.0452
+  Text: What is Hesse's principle of transfer in geometry? Option E: Hesse's principle of transfer is a concept in geometry that states that if the points of the projective line P1 are depicted by a rational normal curve in Pn, then the group of the projective transformations of Pn that preserve the curve is isomorphic to the group of the projective transformations of P1....
+  ------------------------
+  [2] Score: 10.6681
+  Text: What is Hesse's principle of transfer in geometry? Option C: Hesse's principle of transfer is a concept in physics that explains the transfer of energy from one object to another....
+  ------------------------
+  [3] Score: 10.6111
+  Text: What is Hesse's principle of transfer in geometry? Option D: Hesse's principle of transfer is a concept in economics that explains the transfer of wealth from one individual to another....
+  ------------------------
+
+Generating Answer...
+[Latency] LLM Generation: 0.5084 seconds
+Q ID: 25 | True: E | Pred: E | Raw: 'E' | Correct: True
+
+Query: What is the relationship between the Cauchy momentum equation and the Navier-Stokes equation?
+[Latency] Vector Search: 0.0515 seconds
+Stage 1: Retrieved 20 candidates via Vector Search.
+Stage 1: Top Results:
+  [1] Score: 0.4438
+  Text: What is the relationship between the Cauchy momentum equation and the Navier-Stokes equation? Option C: The Navier-Stokes equation is a special case of the Cauchy momentum equation, which is a more general equation that applies to all non-relativistic momentum conservation situations....
+  ------------------------
+  [2] Score: 0.4467
+  Text: What is the relationship between the Cauchy momentum equation and the Navier-Stokes equation? Option B: The Navier-Stokes equation is a simplified version of the Cauchy momentum equation that only applies to situations with constant density and viscosity....
+  ------------------------
+  [3] Score: 0.4749
+  Text: What is the relationship between the Cauchy momentum equation and the Navier-Stokes equation? Option E: The Cauchy momentum equation is a special case of the Navier-Stokes equation, which is a more general equation that applies to all non-relativistic momentum conservation situations....
+  ------------------------
+[Latency] Re-ranking (Cross-Encoder): 0.0445 seconds
+Stage 2: Top Re-ranked Results:
+  [1] Score: 9.2934
+  Text: What is the relationship between the Cauchy momentum equation and the Navier-Stokes equation? Option A: The Navier-Stokes equation can be derived from the Cauchy momentum equation by specifying the stress tensor through a constitutive relation, expressing the shear tensor in terms of viscosity and fluid velocity, and assuming constant density and viscosity....
+  ------------------------
+  [2] Score: 9.2461
+  Text: What is the relationship between the Cauchy momentum equation and the Navier-Stokes equation? Option C: The Navier-Stokes equation is a special case of the Cauchy momentum equation, which is a more general equation that applies to all non-relativistic momentum conservation situations....
+  ------------------------
+  [3] Score: 9.2387
+  Text: What is the relationship between the Cauchy momentum equation and the Navier-Stokes equation? Option B: The Navier-Stokes equation is a simplified version of the Cauchy momentum equation that only applies to situations with constant density and viscosity....
+  ------------------------
+
+Generating Answer...
+[Latency] LLM Generation: 0.5669 seconds
+Q ID: 26 | True: A | Pred: A | Raw: 'A' | Correct: True
+
+Query: What is X-ray pulsar-based navigation (XNAV)?
+[Latency] Vector Search: 0.0456 seconds
+Stage 1: Retrieved 20 candidates via Vector Search.
+Stage 1: Top Results:
+  [1] Score: 0.4006
+  Text: What is X-ray pulsar-based navigation (XNAV)? Option A: X-ray pulsar-based navigation (XNAV) is a navigation technique that uses the periodic X-ray signals emitted from pulsars to determine the location of a vehicle in the Earth's atmosphere....
+  ------------------------
+  [2] Score: 0.4028
+  Text: What is X-ray pulsar-based navigation (XNAV)? Option D: X-ray pulsar-based navigation (XNAV) is a navigation technique that uses the periodic X-ray signals emitted from pulsars to determine the location of a vehicle in deep space, such as a spacecraft....
+  ------------------------
+  [3] Score: 0.4036
+  Text: What is X-ray pulsar-based navigation (XNAV)? Option E: X-ray pulsar-based navigation (XNAV) is a navigation technique that uses the periodic radio signals emitted from satellites to determine the location of a vehicle in deep space, such as a spacecraft....
+  ------------------------
+[Latency] Re-ranking (Cross-Encoder): 0.0295 seconds
+Stage 2: Top Re-ranked Results:
+  [1] Score: 11.2699
+  Text: What is X-ray pulsar-based navigation (XNAV)? Option D: X-ray pulsar-based navigation (XNAV) is a navigation technique that uses the periodic X-ray signals emitted from pulsars to determine the location of a vehicle in deep space, such as a spacecraft....
+  ------------------------
+  [2] Score: 11.2180
+  Text: What is X-ray pulsar-based navigation (XNAV)? Option A: X-ray pulsar-based navigation (XNAV) is a navigation technique that uses the periodic X-ray signals emitted from pulsars to determine the location of a vehicle in the Earth's atmosphere....
+  ------------------------
+  [3] Score: 11.1975
+  Text: What is X-ray pulsar-based navigation (XNAV)? Option C: X-ray pulsar-based navigation (XNAV) is a navigation technique that uses the periodic X-ray signals emitted from satellites to determine the location of a vehicle in deep space, such as a spacecraft....
+  ------------------------
+
+Generating Answer...
+[Latency] LLM Generation: 0.5790 seconds
+Q ID: 27 | True: D | Pred: D | Raw: 'D' | Correct: True
+
+Query: What is the evidence for the existence of a supermassive black hole at the center of the Milky Way galaxy?
+[Latency] Vector Search: 0.0488 seconds
+Stage 1: Retrieved 20 candidates via Vector Search.
+Stage 1: Top Results:
+  [1] Score: 0.4233
+  Text: What is the evidence for the existence of a supermassive black hole at the center of the Milky Way galaxy? Option D: The Milky Way galaxy has a supermassive black hole at its center because it is the only explanation for the bright flare activity observed near Sagittarius A* at a separation of six to ten times the gravitational radius of the candidate SMBH....
+  ------------------------
+  [2] Score: 0.4553
+  Text: What is the evidence for the existence of a supermassive black hole at the center of the Milky Way galaxy? Option C: The Milky Way galaxy has a supermassive black hole at its center because of the bright flare activity observed near Sagittarius A*. The radius of the central object must be less than 6.25 light-hours, about the diameter of Uranus' orbit....
+  ------------------------
+  [3] Score: 0.4609
+  Text: What is the evidence for the existence of a supermassive black hole at the center of the Milky Way galaxy? Option A: The Milky Way galaxy has a supermassive black hole at its center because of the bright flare activity observed near Sagittarius A*. The radius of the central object must be less than 17 light-hours, because otherwise S2 would collide with it....
+  ------------------------
+[Latency] Re-ranking (Cross-Encoder): 0.0461 seconds
+Stage 2: Top Re-ranked Results:
+  [1] Score: 10.2964
+  Text: What is the evidence for the existence of a supermassive black hole at the center of the Milky Way galaxy? Option A: The Milky Way galaxy has a supermassive black hole at its center because of the bright flare activity observed near Sagittarius A*. The radius of the central object must be less than 17 light-hours, because otherwise S2 would collide with it....
+  ------------------------
+  [2] Score: 10.2182
+  Text: What is the evidence for the existence of a supermassive black hole at the center of the Milky Way galaxy? Option B: The Milky Way galaxy has a supermassive black hole at its center because the star S14 follows an elliptical orbit with a period of 15.2 years and a pericenter of 17 light-hours from the center of the central object. From the motion of star S14, the object's mass can be estimated as 4.0 million M☉, or about 7.96×1036 kg....
+  ------------------------
+  [3] Score: 10.1566
+  Text: What is the evidence for the existence of a supermassive black hole at the center of the Milky Way galaxy? Option C: The Milky Way galaxy has a supermassive black hole at its center because of the bright flare activity observed near Sagittarius A*. The radius of the central object must be less than 6.25 light-hours, about the diameter of Uranus' orbit....
+  ------------------------
+
+Generating Answer...
+[Latency] LLM Generation: 0.8449 seconds
+Q ID: 28 | True: E | Pred: B | Raw: 'B' | Correct: False
+
+Query: What is the function of the fibrous cardiac skeleton?
+[Latency] Vector Search: 0.0380 seconds
+Stage 1: Retrieved 20 candidates via Vector Search.
+Stage 1: Top Results:
+  [1] Score: 0.4745
+  Text: What is the function of the fibrous cardiac skeleton? Option D: The fibrous cardiac skeleton is a network of nerves that controls the heartbeat and rhythm of the heart....
+  ------------------------
+  [2] Score: 0.4865
+  Text: What is the function of the fibrous cardiac skeleton? Option E: The fibrous cardiac skeleton is a protective layer that surrounds the heart, shielding it from external damage....
+  ------------------------
+  [3] Score: 0.4875
+  Text: What is the function of the fibrous cardiac skeleton? Option B: The fibrous cardiac skeleton is responsible for the pumping action of the heart, regulating the flow of blood through the atria and ventricles....
+  ------------------------
+[Latency] Re-ranking (Cross-Encoder): 0.0320 seconds
+Stage 2: Top Re-ranked Results:
+  [1] Score: 10.2114
+  Text: What is the function of the fibrous cardiac skeleton? Option B: The fibrous cardiac skeleton is responsible for the pumping action of the heart, regulating the flow of blood through the atria and ventricles....
+  ------------------------
+  [2] Score: 10.1133
+  Text: What is the function of the fibrous cardiac skeleton? Option C: The fibrous cardiac skeleton provides structure to the heart, forming the atrioventricular septum that separates the atria from the ventricles, and the fibrous rings that serve as bases for the four heart valves....
+  ------------------------
+  [3] Score: 9.7093
+  Text: What is the function of the fibrous cardiac skeleton? Option A: The fibrous cardiac skeleton is a system of blood vessels that supplies oxygen and nutrients to the heart muscle....
+  ------------------------
+
+Generating Answer...
+[Latency] LLM Generation: 0.5208 seconds
+Q ID: 29 | True: C | Pred: C | Raw: 'C' | Correct: True
+
+Query: What is the Carnot engine?
+[Latency] Vector Search: 0.0505 seconds
+Stage 1: Retrieved 20 candidates via Vector Search.
+Stage 1: Top Results:
+  [1] Score: 0.0000
+  Text: What is the Carnot engine?...
+  ------------------------
+  [2] Score: 0.0000
+  Text: What is the Carnot engine?...
+  ------------------------
+  [3] Score: 0.0000
+  Text: What is the Carnot engine?...
+  ------------------------
+[Latency] Re-ranking (Cross-Encoder): 0.0381 seconds
+Stage 2: Top Re-ranked Results:
+  [1] Score: 9.7687
+  Text: Option A: The Carnot engine is a theoretical engine that operates in the limiting mode of extreme speed known as dynamic. It represents the theoretical maximum efficiency of a heat engine operating between any two given thermal or heat reservoirs at different temperatures....
+  ------------------------
+  [2] Score: 9.6667
+  Text: Option D: The Carnot engine is a theoretical engine that operates in the limiting mode of extreme slowness known as quasi-static. It represents the theoretical minimum efficiency of a heat engine operating between any two given thermal or heat reservoirs at different temperatures....
+  ------------------------
+  [3] Score: 9.3946
+  Text: Option C: The Carnot engine is a real heat engine that operates in the limiting mode of extreme speed known as dynamic. It represents the theoretical minimum efficiency of a heat engine operating between any two given thermal or heat reservoirs at different temperatures....
+  ------------------------
+
+Generating Answer...
+[Latency] LLM Generation: 0.5513 seconds
+Q ID: 30 | True: B | Pred: A | Raw: 'A' | Correct: False
+
+Query: Which mathematical function is commonly used to characterize linear time-invariant systems?
+[Latency] Vector Search: 0.0470 seconds
+Stage 1: Retrieved 20 candidates via Vector Search.
+Stage 1: Top Results:
+  [1] Score: 0.4401
+  Text: Which mathematical function is commonly used to characterize linear time-invariant systems? Option A: Trigonometric function...
+  ------------------------
+  [2] Score: 0.4499
+  Text: Which mathematical function is commonly used to characterize linear time-invariant systems? Option B: Quadratic function...
+  ------------------------
+  [3] Score: 0.4713
+  Text: Which mathematical function is commonly used to characterize linear time-invariant systems? Option D: Logarithmic function...
+  ------------------------
+[Latency] Re-ranking (Cross-Encoder): 0.0393 seconds
+Stage 2: Top Re-ranked Results:
+  [1] Score: 10.0813
+  Text: Which mathematical function is commonly used to characterize linear time-invariant systems? Option A: Trigonometric function...
+  ------------------------
+  [2] Score: 10.0476
+  Text: Which mathematical function is commonly used to characterize linear time-invariant systems? Option B: Quadratic function...
+  ------------------------
+  [3] Score: 9.9610
+  Text: Which mathematical function is commonly used to characterize linear time-invariant systems? Option C: Exponential function...
+  ------------------------
+
+Generating Answer...
+[Latency] LLM Generation: 0.4095 seconds
+Q ID: 31 | True: E | Pred: E | Raw: 'E' | Correct: True
+
+Query: What is the second law of thermodynamics?
+[Latency] Vector Search: 0.0503 seconds
+Stage 1: Retrieved 20 candidates via Vector Search.
+Stage 1: Top Results:
+  [1] Score: 0.0000
+  Text: What is the second law of thermodynamics?...
+  ------------------------
+  [2] Score: 0.0000
+  Text: What is the second law of thermodynamics?...
+  ------------------------
+  [3] Score: 0.0000
+  Text: What is the second law of thermodynamics?...
+  ------------------------
+[Latency] Re-ranking (Cross-Encoder): 0.0302 seconds
+Stage 2: Top Re-ranked Results:
+  [1] Score: 10.6670
+  Text: Option D: The second law of thermodynamics is a physical law based on universal experience concerning heat and energy interconversions. It states that the entropy of isolated systems left to spontaneous evolution can decrease, as they always arrive at a state of thermodynamic equilibrium where the entropy is highest at the given internal energy....
+  ------------------------
+  [2] Score: 10.6461
+  Text: Option A: The second law of thermodynamics is a physical law based on universal experience concerning heat and energy interconversions. It states that heat always moves from colder objects to hotter objects unless energy in some form is supplied to reverse the direction of heat flow....
+  ------------------------
+  [3] Score: 10.6060
+  Text: Option C: The second law of thermodynamics is a physical law based on universal experience concerning heat and energy interconversions. It establishes that all heat energy can be converted into work in a cyclic process....
+  ------------------------
+
+Generating Answer...
+[Latency] LLM Generation: 0.5854 seconds
+Q ID: 32 | True: E | Pred: A | Raw: 'A' | Correct: False
+
+Query: What are amorphous ferromagnetic metallic alloys, and what are their advantages?
+[Latency] Vector Search: 0.0349 seconds
+Stage 1: Retrieved 20 candidates via Vector Search.
+Stage 1: Top Results:
+  [1] Score: 0.0000
+  Text: What are amorphous ferromagnetic metallic alloys, and what are their advantages?...
+  ------------------------
+  [2] Score: 0.0000
+  Text: What are amorphous ferromagnetic metallic alloys, and what are their advantages?...
+  ------------------------
+  [3] Score: 0.0000
+  Text: What are amorphous ferromagnetic metallic alloys, and what are their advantages?...
+  ------------------------
+[Latency] Re-ranking (Cross-Encoder): 0.0389 seconds
+Stage 2: Top Re-ranked Results:
+  [1] Score: 8.3105
+  Text: Option A: Amorphous ferromagnetic metallic alloys are crystalline alloys that can be made by rapidly cooling a liquid alloy. Their properties are nearly anisotropic, resulting in low coercivity, low hysteresis loss, high permeability, and high electrical resistivity....
+  ------------------------
+  [2] Score: 8.1716
+  Text: Option C: Amorphous ferromagnetic metallic alloys are crystalline alloys that can be made by slowly cooling a liquid alloy. Their properties are nearly anisotropic, resulting in high coercivity, high hysteresis loss, low permeability, and low electrical resistivity....
+  ------------------------
+  [3] Score: 8.1656
+  Text: Option D: Amorphous ferromagnetic metallic alloys are non-crystalline alloys that can be made by rapidly cooling a liquid alloy. Their properties are nearly isotropic, resulting in low coercivity, low hysteresis loss, high permeability, and high electrical resistivity....
+  ------------------------
+
+Generating Answer...
+[Latency] LLM Generation: 0.5623 seconds
+Q ID: 33 | True: D | Pred: D | Raw: 'D' | Correct: True
+
+Query: What is the Penrose process?
+[Latency] Vector Search: 0.0436 seconds
+Stage 1: Retrieved 20 candidates via Vector Search.
+Stage 1: Top Results:
+  [1] Score: 0.6830
+  Text: What is the Penrose process? Option A: The Penrose process is a mechanism through which objects can emerge from the ergosphere with less energy than they entered with, taking energy from the rotational energy of the black hole and speeding up its rotation....
+  ------------------------
+  [2] Score: 0.7017
+  Text: What is the Penrose process? Option C: The Penrose process is a mechanism through which objects can emerge from the ergosphere with more energy than they entered with, taking extra energy from the rotational energy of the black hole and slowing down its rotation....
+  ------------------------
+  [3] Score: 0.7029
+  Text: What is the Penrose process? Option B: The Penrose process is a mechanism through which objects can emerge from the ergosphere with the same energy as they entered with, taking energy from the rotational energy of the black hole and maintaining its rotation....
+  ------------------------
+[Latency] Re-ranking (Cross-Encoder): 0.0384 seconds
+Stage 2: Top Re-ranked Results:
+  [1] Score: 10.6513
+  Text: What is the Penrose process? Option A: The Penrose process is a mechanism through which objects can emerge from the ergosphere with less energy than they entered with, taking energy from the rotational energy of the black hole and speeding up its rotation....
+  ------------------------
+  [2] Score: 10.5940
+  Text: What is the Penrose process? Option D: The Penrose process is a mechanism through which objects can emerge from the event horizon with less energy than they entered with, taking energy from the rotational energy of the black hole and speeding up its rotation....
+  ------------------------
+  [3] Score: 10.5177
+  Text: What is the Penrose process? Option E: The Penrose process is a mechanism through which objects can emerge from the event horizon with more energy than they entered with, taking extra energy from the rotational energy of the black hole and slowing down its rotation....
+  ------------------------
+
+Generating Answer...
+[Latency] LLM Generation: 0.5712 seconds
+Q ID: 34 | True: C | Pred: D | Raw: 'D' | Correct: False
+
+Query: What was the aim of the Gravity Probe B (GP-B) mission?
+[Latency] Vector Search: 0.0420 seconds
+Stage 1: Retrieved 20 candidates via Vector Search.
+Stage 1: Top Results:
+  [1] Score: 0.5814
+  Text: What was the aim of the Gravity Probe B (GP-B) mission? Option B: To measure spacetime curvature near Earth, with particular emphasis on gravitomagnetism....
+  ------------------------
+  [2] Score: 0.6578
+  Text: What was the aim of the Gravity Probe B (GP-B) mission? Option D: To confirm the relatively large geodetic effect due to simple spacetime curvature, and is also known as de Sitter precession....
+  ------------------------
+  [3] Score: 0.6857
+  Text: What was the aim of the Gravity Probe B (GP-B) mission? Option C: To measure the distribution of Fe and Al on the Moon's surface....
+  ------------------------
+[Latency] Re-ranking (Cross-Encoder): 0.0378 seconds
+Stage 2: Top Re-ranked Results:
+  [1] Score: 10.2471
+  Text: What was the aim of the Gravity Probe B (GP-B) mission? Option B: To measure spacetime curvature near Earth, with particular emphasis on gravitomagnetism....
+  ------------------------
+  [2] Score: 10.0395
+  Text: What was the aim of the Gravity Probe B (GP-B) mission? Option D: To confirm the relatively large geodetic effect due to simple spacetime curvature, and is also known as de Sitter precession....
+  ------------------------
+  [3] Score: 9.7722
+  Text: What was the aim of the Gravity Probe B (GP-B) mission? Option E: To measure the discrepancy between active and passive mass to about 10−12....
+  ------------------------
+
+Generating Answer...
+[Latency] LLM Generation: 0.4587 seconds
+Q ID: 35 | True: B | Pred: B | Raw: 'B' | Correct: True
+
+Query: What was Pierre de Fermat's solution to the problem of refraction?
+[Latency] Vector Search: 0.0429 seconds
+Stage 1: Retrieved 20 candidates via Vector Search.
+Stage 1: Top Results:
+  [1] Score: 0.6153
+  Text: What was Pierre de Fermat's solution to the problem of refraction? Option B: Fermat supposed that light took the path of least resistance, and that different media offered different resistances. His eventual solution, described in a letter to La Chambre dated 1 January 1662, construed "resistance" as directly proportional to speed, so that light took the path of least time....
+  ------------------------
+  [2] Score: 0.6253
+  Text: What was Pierre de Fermat's solution to the problem of refraction? Option E: Fermat supposed that light took the path of least resistance, and that different media offered different resistances. His eventual solution, described in a letter to La Chambre dated 1 January 1662, construed "resistance" as inversely proportional to speed, so that light took the path of least time....
+  ------------------------
+  [3] Score: 0.6285
+  Text: What was Pierre de Fermat's solution to the problem of refraction? Option C: Fermat supposed that light took the path of least resistance, and that different media offered the same resistance. His eventual solution, described in a letter to La Chambre dated 1 January 1662, construed "resistance" as directly proportional to speed, so that light took the path of least time....
+  ------------------------
+[Latency] Re-ranking (Cross-Encoder): 0.0446 seconds
+Stage 2: Top Re-ranked Results:
+  [1] Score: 10.3156
+  Text: What was Pierre de Fermat's solution to the problem of refraction? Option A: Fermat supposed that light took the path of least resistance, and that different media offered the same resistance. His eventual solution, described in a letter to La Chambre dated 1 January 1662, construed "resistance" as inversely proportional to speed, so that light took the path of least time....
+  ------------------------
+  [2] Score: 10.3092
+  Text: What was Pierre de Fermat's solution to the problem of refraction? Option E: Fermat supposed that light took the path of least resistance, and that different media offered different resistances. His eventual solution, described in a letter to La Chambre dated 1 January 1662, construed "resistance" as inversely proportional to speed, so that light took the path of least time....
+  ------------------------
+  [3] Score: 10.3062
+  Text: What was Pierre de Fermat's solution to the problem of refraction? Option D: Fermat supposed that light took the path of least resistance, and that different media offered the same resistance. His eventual solution, described in a letter to La Chambre dated 1 January 1662, construed "resistance" as inversely proportional to speed, so that light took the path of least time....
+  ------------------------
+
+Generating Answer...
+[Latency] LLM Generation: 0.7626 seconds
+Q ID: 36 | True: E | Pred: D | Raw: 'D' | Correct: False
+
+Query: What is the reason behind the adoption of a logarithmic scale of 5√100 ≈ 2.512 between magnitudes in astronomy?
+[Latency] Vector Search: 0.0482 seconds
+Stage 1: Retrieved 20 candidates via Vector Search.
+Stage 1: Top Results:
+  [1] Score: 0.3780
+  Text: What is the reason behind the adoption of a logarithmic scale of 5√100 ≈ 2.512 between magnitudes in astronomy? Option E: The logarithmic scale was adopted to measure the distance between stars....
+  ------------------------
+  [2] Score: 0.4089
+  Text: What is the reason behind the adoption of a logarithmic scale of 5√100 ≈ 2.512 between magnitudes in astronomy? Option B: The logarithmic scale was adopted to measure the size of stars....
+  ------------------------
+  [3] Score: 0.4101
+  Text: What is the reason behind the adoption of a logarithmic scale of 5√100 ≈ 2.512 between magnitudes in astronomy? Option A: The logarithmic scale was adopted to ensure that five magnitude steps corresponded precisely to a factor of 100 in brightness....
+  ------------------------
+[Latency] Re-ranking (Cross-Encoder): 0.0444 seconds
+Stage 2: Top Re-ranked Results:
+  [1] Score: 9.4420
+  Text: What is the reason behind the adoption of a logarithmic scale of 5√100 ≈ 2.512 between magnitudes in astronomy? Option A: The logarithmic scale was adopted to ensure that five magnitude steps corresponded precisely to a factor of 100 in brightness....
+  ------------------------
+  [2] Score: 9.3718
+  Text: What is the reason behind the adoption of a logarithmic scale of 5√100 ≈ 2.512 between magnitudes in astronomy? Option D: The logarithmic scale was adopted to ensure that the apparent sizes of stars were not spurious....
+  ------------------------
+  [3] Score: 9.1308
+  Text: What is the reason behind the adoption of a logarithmic scale of 5√100 ≈ 2.512 between magnitudes in astronomy? Option C: The logarithmic scale was adopted to measure the intensity of light coming from a star....
+  ------------------------
+
+Generating Answer...
+[Latency] LLM Generation: 0.5042 seconds
+Q ID: 37 | True: A | Pred: A | Raw: 'A' | Correct: True
+
+Query: What is the spin quantum number?
+[Latency] Vector Search: 0.0455 seconds
+Stage 1: Retrieved 20 candidates via Vector Search.
+Stage 1: Top Results:
+  [1] Score: 0.6080
+  Text: What is the spin quantum number? Option D: The spin quantum number is a measure of the speed of an elementary particle's rotation around some axis....
+  ------------------------
+  [2] Score: 0.6180
+  Text: What is the spin quantum number? Option A: The spin quantum number is a measure of the distance between an elementary particle and the nucleus of an atom....
+  ------------------------
+  [3] Score: 0.6431
+  Text: What is the spin quantum number? Option E: The spin quantum number is a dimensionless quantity obtained by dividing the spin angular momentum by the reduced Planck constant ħ, which has the same dimensions as angular momentum....
+  ------------------------
+[Latency] Re-ranking (Cross-Encoder): 0.0393 seconds
+Stage 2: Top Re-ranked Results:
+  [1] Score: 10.4523
+  Text: What is the spin quantum number? Option E: The spin quantum number is a dimensionless quantity obtained by dividing the spin angular momentum by the reduced Planck constant ħ, which has the same dimensions as angular momentum....
+  ------------------------
+  [2] Score: 10.3503
+  Text: What is the spin quantum number? Option A: The spin quantum number is a measure of the distance between an elementary particle and the nucleus of an atom....
+  ------------------------
+  [3] Score: 10.2085
+  Text: What is the spin quantum number? Option D: The spin quantum number is a measure of the speed of an elementary particle's rotation around some axis....
+  ------------------------
+
+Generating Answer...
+[Latency] LLM Generation: 0.4897 seconds
+Q ID: 38 | True: E | Pred: E | Raw: 'E' | Correct: True
+
+Query: What is the synapstor or synapse transistor?
+[Latency] Vector Search: 0.0433 seconds
+Stage 1: Retrieved 20 candidates via Vector Search.
+Stage 1: Top Results:
+  [1] Score: 0.6226
+  Text: What is the synapstor or synapse transistor? Option A: A device used to demonstrate a neuro-inspired circuit that shows short-term potentiation for learning and inactivity-based forgetting....
+  ------------------------
+  [2] Score: 0.6394
+  Text: What is the synapstor or synapse transistor? Option E: A device used to demonstrate a neuro-inspired circuit that shows long-term potentiation for learning and inactivity-based forgetting....
+  ------------------------
+  [3] Score: 0.6473
+  Text: What is the synapstor or synapse transistor? Option B: A device used to demonstrate a neuro-inspired circuit that shows long-term potentiation for learning and activity-based forgetting....
+  ------------------------
+[Latency] Re-ranking (Cross-Encoder): 0.0375 seconds
+Stage 2: Top Re-ranked Results:
+  [1] Score: 10.0247
+  Text: What is the synapstor or synapse transistor? Option E: A device used to demonstrate a neuro-inspired circuit that shows long-term potentiation for learning and inactivity-based forgetting....
+  ------------------------
+  [2] Score: 9.9991
+  Text: What is the synapstor or synapse transistor? Option D: A device used to demonstrate a neuro-inspired circuit that shows short-term potentiation for learning and activity-based forgetting....
+  ------------------------
+  [3] Score: 9.9871
+  Text: What is the synapstor or synapse transistor? Option B: A device used to demonstrate a neuro-inspired circuit that shows long-term potentiation for learning and activity-based forgetting....
+  ------------------------
+
+Generating Answer...
+[Latency] LLM Generation: 0.4632 seconds
+Q ID: 39 | True: E | Pred: E | Raw: 'E' | Correct: True
+
+Query: What is spontaneous symmetry breaking?
+[Latency] Vector Search: 0.0476 seconds
+Stage 1: Retrieved 20 candidates via Vector Search.
+Stage 1: Top Results:
+  [1] Score: 0.0000
+  Text: What is spontaneous symmetry breaking?...
+  ------------------------
+  [2] Score: 0.0000
+  Text: What is spontaneous symmetry breaking?...
+  ------------------------
+  [3] Score: 0.0000
+  Text: What is spontaneous symmetry breaking?...
+  ------------------------
+[Latency] Re-ranking (Cross-Encoder): 0.0310 seconds
+Stage 2: Top Re-ranked Results:
+  [1] Score: 9.3245
+  Text: Option A: Spontaneous symmetry breaking occurs when the action of a theory has no symmetry, but the vacuum state has a symmetry. In that case, there will exist a local operator that is non-invariant under the symmetry, giving it a nonzero vacuum expectation value....
+  ------------------------
+  [2] Score: 9.1639
+  Text: Option C: Spontaneous symmetry breaking occurs when the action of a theory has no symmetry, and the vacuum state also has no symmetry. In that case, there will exist a local operator that is invariant under the symmetry, giving it a zero vacuum expectation value....
+  ------------------------
+  [3] Score: 9.1344
+  Text: Option D: Spontaneous symmetry breaking occurs when the action of a theory has a symmetry, but the vacuum state violates this symmetry. In that case, there will exist a local operator that is invariant under the symmetry, giving it a zero vacuum expectation value....
+  ------------------------
+
+Generating Answer...
+[Latency] LLM Generation: 0.5546 seconds
+Q ID: 40 | True: E | Pred: A | Raw: 'A' | Correct: False
+
+Query: What is the proper distance for a redshift of 8.2?
+[Latency] Vector Search: 0.0471 seconds
+Stage 1: Retrieved 20 candidates via Vector Search.
+Stage 1: Top Results:
+  [1] Score: 0.3962
+  Text: What is the proper distance for a redshift of 8.2? Option E: The proper distance for a redshift of 8.2 is about 10.2 Gpc, or about 32 billion light-years....
+  ------------------------
+  [2] Score: 0.4093
+  Text: What is the proper distance for a redshift of 8.2? Option A: The proper distance for a redshift of 8.2 is about 6.2 Gpc, or about 24 billion light-years....
+  ------------------------
+  [3] Score: 0.4145
+  Text: What is the proper distance for a redshift of 8.2? Option B: The proper distance for a redshift of 8.2 is about 7.2 Gpc, or about 26 billion light-years....
+  ------------------------
+[Latency] Re-ranking (Cross-Encoder): 0.0477 seconds
+Stage 2: Top Re-ranked Results:
+  [1] Score: 9.9859
+  Text: What is the proper distance for a redshift of 8.2? Option A: The proper distance for a redshift of 8.2 is about 6.2 Gpc, or about 24 billion light-years....
+  ------------------------
+  [2] Score: 9.8768
+  Text: What is the proper distance for a redshift of 8.2? Option B: The proper distance for a redshift of 8.2 is about 7.2 Gpc, or about 26 billion light-years....
+  ------------------------
+  [3] Score: 9.8604
+  Text: What is the proper distance for a redshift of 8.2? Option C: The proper distance for a redshift of 8.2 is about 9.2 Gpc, or about 30 billion light-years....
+  ------------------------
+
+Generating Answer...
+[Latency] LLM Generation: 0.4850 seconds
+Q ID: 41 | True: C | Pred: A | Raw: 'A' | Correct: False
+
+Query: Who was the first to determine the velocity of a star moving away from the Earth using the Doppler effect?
+[Latency] Vector Search: 0.0493 seconds
+Stage 1: Retrieved 20 candidates via Vector Search.
+Stage 1: Top Results:
+  [1] Score: 0.2869
+  Text: Who was the first to determine the velocity of a star moving away from the Earth using the Doppler effect? Option E: None of the above...
+  ------------------------
+  [2] Score: 0.4171
+  Text: Who was the first to determine the velocity of a star moving away from the Earth using the Doppler effect? Option A: Fraunhofer...
+  ------------------------
+  [3] Score: 0.4853
+  Text: Who was the first to determine the velocity of a star moving away from the Earth using the Doppler effect? Option D: Vogel and Scheiner...
+  ------------------------
+[Latency] Re-ranking (Cross-Encoder): 0.0381 seconds
+Stage 2: Top Re-ranked Results:
+  [1] Score: 9.4907
+  Text: Who was the first to determine the velocity of a star moving away from the Earth using the Doppler effect? Option B: William Huggins...
+  ------------------------
+  [2] Score: 8.9854
+  Text: Who was the first to determine the velocity of a star moving away from the Earth using the Doppler effect? Option D: Vogel and Scheiner...
+  ------------------------
+  [3] Score: 8.7885
+  Text: Who was the first to determine the velocity of a star moving away from the Earth using the Doppler effect? Option C: Hippolyte Fizeau...
+  ------------------------
+
+Generating Answer...
+[Latency] LLM Generation: 0.4503 seconds
+Q ID: 42 | True: B | Pred: D | Raw: 'D' | Correct: False
+
+Query: What is the information loss paradox in black holes?
+[Latency] Vector Search: 0.0437 seconds
+Stage 1: Retrieved 20 candidates via Vector Search.
+Stage 1: Top Results:
+  [1] Score: 0.6001
+  Text: As black holes evaporate by emitting Hawking radiation, the information is lost forever....
+  ------------------------
+  [2] Score: 0.6565
+  Text: What is the information loss paradox in black holes? Option D: Black holes have only a few internal parameters, so most of the information about the matter that went into forming the black hole is lost....
+  ------------------------
+  [3] Score: 0.6568
+  Text: What is the information loss paradox in black holes? Option C: Black holes have only a few internal parameters, so most of the information about the matter that went into forming the black hole is lost....
+  ------------------------
+[Latency] Re-ranking (Cross-Encoder): 0.0392 seconds
+Stage 2: Top Re-ranked Results:
+  [1] Score: 10.1795
+  Text: What is the information loss paradox in black holes? Option A: Black holes have an infinite number of internal parameters, so all the information about the matter that went into forming the black hole is preserved. Regardless of the type of matter which goes into a black hole, it appears that all the information is conserved....
+  ------------------------
+  [2] Score: 9.7025
+  Text: What is the information loss paradox in black holes? Option B: Black holes have an infinite number of internal parameters, so all the information about the matter that went into forming the black hole is preserved....
+  ------------------------
+  [3] Score: 9.5765
+  Text: What is the information loss paradox in black holes? Option E: Black holes have only a few internal parameters, so most of the information about the matter that went into forming the black hole is preserved....
+  ------------------------
+
+Generating Answer...
+[Latency] LLM Generation: 0.6610 seconds
+Q ID: 43 | True: C | Pred: C | Raw: 'C' | Correct: True
+
+Query: What is the Kutta condition?
+[Latency] Vector Search: 0.0504 seconds
+Stage 1: Retrieved 20 candidates via Vector Search.
+Stage 1: Top Results:
+  [1] Score: 0.6447
+  Text: What is the Kutta condition? Option A: The Kutta condition is a physical requirement that the fluid moving along the lower and upper surfaces of an airfoil meet smoothly, with no fluid moving around the trailing edge of the airfoil....
+  ------------------------
+  [2] Score: 0.6656
+  Text: What is the Kutta condition? Option E: The Kutta condition is a physical requirement that the circulation calculated using the loop corresponding to the surface of the airfoil must be zero for a viscous fluid....
+  ------------------------
+  [3] Score: 0.6708
+  Text: What is the Kutta condition? Option B: The Kutta condition is a physical requirement that the fluid moving along the lower and upper surfaces of an airfoil meet smoothly, with no fluid moving around the leading edge of the airfoil....
+  ------------------------
+[Latency] Re-ranking (Cross-Encoder): 0.0389 seconds
+Stage 2: Top Re-ranked Results:
+  [1] Score: 10.0886
+  Text: What is the Kutta condition? Option A: The Kutta condition is a physical requirement that the fluid moving along the lower and upper surfaces of an airfoil meet smoothly, with no fluid moving around the trailing edge of the airfoil....
+  ------------------------
+  [2] Score: 9.8789
+  Text: What is the Kutta condition? Option B: The Kutta condition is a physical requirement that the fluid moving along the lower and upper surfaces of an airfoil meet smoothly, with no fluid moving around the leading edge of the airfoil....
+  ------------------------
+  [3] Score: 9.5881
+  Text: What is the Kutta condition? Option E: The Kutta condition is a physical requirement that the circulation calculated using the loop corresponding to the surface of the airfoil must be zero for a viscous fluid....
+  ------------------------
+
+Generating Answer...
+[Latency] LLM Generation: 0.5443 seconds
+Q ID: 44 | True: A | Pred: A | Raw: 'A' | Correct: True
+
+Query: What is classical mechanics?
+[Latency] Vector Search: 0.0504 seconds
+Stage 1: Retrieved 20 candidates via Vector Search.
+Stage 1: Top Results:
+  [1] Score: 0.0000
+  Text: What is classical mechanics?...
+  ------------------------
+  [2] Score: 0.0000
+  Text: What is classical mechanics?...
+  ------------------------
+  [3] Score: 0.0000
+  Text: What is classical mechanics?...
+  ------------------------
+[Latency] Re-ranking (Cross-Encoder): 0.0313 seconds
+Stage 2: Top Re-ranked Results:
+  [1] Score: 10.7473
+  Text: What is classical mechanics? Option C: Classical mechanics is the branch of physics that studies the behaviour of subatomic particles such as electrons and protons....
+  ------------------------
+  [2] Score: 10.6230
+  Text: What is classical mechanics? Option E: Classical mechanics is the branch of physics that studies the behaviour of fluids and gases....
+  ------------------------
+  [3] Score: 10.5698
+  Text: Option A: Classical mechanics is the branch of physics that describes the motion of macroscopic objects using concepts such as mass, acceleration, and force. It is based on a three-dimensional Euclidean space with fixed axes, and utilises many equations and mathematical concepts to relate physical quantities to one another....
+  ------------------------
+
+Generating Answer...
+[Latency] LLM Generation: 0.5776 seconds
+Q ID: 45 | True: A | Pred: A | Raw: 'A' | Correct: True
+
+Query: Who shared the other half of the Nobel Prize with Yoichiro Nambu for discovering the origin of the explicit breaking of CP symmetry in the weak interactions?
+[Latency] Vector Search: 0.0384 seconds
+Stage 1: Retrieved 20 candidates via Vector Search.
+Stage 1: Top Results:
+  [1] Score: 0.3266
+  Text: Who shared the other half of the Nobel Prize with Yoichiro Nambu for discovering the origin of the explicit breaking of CP symmetry in the weak interactions? Option B: Makoto Kobayashi and Toshihide Maskawa...
+  ------------------------
+  [2] Score: 0.3295
+  Text: Who shared the other half of the Nobel Prize with Yoichiro Nambu for discovering the origin of the explicit breaking of CP symmetry in the weak interactions? Option C: Steven Weinberg and Sheldon Glashow...
+  ------------------------
+  [3] Score: 0.3928
+  Text: Who shared the other half of the Nobel Prize with Yoichiro Nambu for discovering the origin of the explicit breaking of CP symmetry in the weak interactions? Option E: Murray Gell-Mann and George Zweig...
+  ------------------------
+[Latency] Re-ranking (Cross-Encoder): 0.0391 seconds
+Stage 2: Top Re-ranked Results:
+  [1] Score: 9.8531
+  Text: Who shared the other half of the Nobel Prize with Yoichiro Nambu for discovering the origin of the explicit breaking of CP symmetry in the weak interactions? Option A: Richard Feynman and Julian Schwinger...
+  ------------------------
+  [2] Score: 9.6208
+  Text: Who shared the other half of the Nobel Prize with Yoichiro Nambu for discovering the origin of the explicit breaking of CP symmetry in the weak interactions? Option C: Steven Weinberg and Sheldon Glashow...
+  ------------------------
+  [3] Score: 9.5874
+  Text: Who shared the other half of the Nobel Prize with Yoichiro Nambu for discovering the origin of the explicit breaking of CP symmetry in the weak interactions? Option E: Murray Gell-Mann and George Zweig...
+  ------------------------
+
+Generating Answer...
+[Latency] LLM Generation: 0.4267 seconds
+Q ID: 46 | True: B | Pred: B | Raw: 'B' | Correct: True
+
+Query: What are some models that attempt to account for all observations without invoking supplemental non-baryonic matter?
+[Latency] Vector Search: 0.0455 seconds
+Stage 1: Retrieved 20 candidates via Vector Search.
+Stage 1: Top Results:
+  [1] Score: 0.4538
+  Text: What are some models that attempt to account for all observations without invoking supplemental non-baryonic matter? Option B: The Higgs boson, the W boson, or the Z boson....
+  ------------------------
+  [2] Score: 0.4856
+  Text: What are some models that attempt to account for all observations without invoking supplemental non-baryonic matter? Option E: Kepler's laws, Newton's laws, or Einstein's theory of general relativity....
+  ------------------------
+  [3] Score: 0.5387
+  Text: What are some models that attempt to account for all observations without invoking supplemental non-baryonic matter? Option A: The Doppler effect, the photoelectric effect, or the Compton effect....
+  ------------------------
+[Latency] Re-ranking (Cross-Encoder): 0.0491 seconds
+Stage 2: Top Re-ranked Results:
+  [1] Score: 10.2637
+  Text: What are some models that attempt to account for all observations without invoking supplemental non-baryonic matter? Option E: Kepler's laws, Newton's laws, or Einstein's theory of general relativity....
+  ------------------------
+  [2] Score: 10.2221
+  Text: What are some models that attempt to account for all observations without invoking supplemental non-baryonic matter? Option B: The Higgs boson, the W boson, or the Z boson....
+  ------------------------
+  [3] Score: 10.2161
+  Text: What are some models that attempt to account for all observations without invoking supplemental non-baryonic matter? Option D: The strong nuclear force, the weak nuclear force, or the electromagnetic force....
+  ------------------------
+
+Generating Answer...
+[Latency] LLM Generation: 0.4609 seconds
+Q ID: 47 | True: C | Pred: E | Raw: 'E' | Correct: False
+
+Query: What is the purpose of the proximity-focusing design in a RICH detector?
+[Latency] Vector Search: 0.0390 seconds
+Stage 1: Retrieved 20 candidates via Vector Search.
+Stage 1: Top Results:
+  [1] Score: 0.6581
+  Text: What is the purpose of the proximity-focusing design in a RICH detector? Option C: To emit a cone of Cherenkov light that traverses a large distance and is detected on the photon detector plane, creating a ring of light whose radius is defined by the Cherenkov emission angle and the proximity gap....
+  ------------------------
+  [2] Score: 0.6609
+  Text: What is the purpose of the proximity-focusing design in a RICH detector? Option D: To emit a cone of Cherenkov light that traverses a small distance and is detected on the photon detector plane, creating a ring of light whose radius is defined by the Cherenkov emission angle and the proximity gap....
+  ------------------------
+  [3] Score: 0.6822
+  Text: What is the purpose of the proximity-focusing design in a RICH detector? Option A: To emit a cone of Askaryan radiation that traverses a small distance and is detected on the photon detector plane, creating a ring of light whose radius is defined by the Cherenkov emission angle and the proximity gap....
+  ------------------------
+[Latency] Re-ranking (Cross-Encoder): 0.0404 seconds
+Stage 2: Top Re-ranked Results:
+  [1] Score: 10.3445
+  Text: What is the purpose of the proximity-focusing design in a RICH detector? Option A: To emit a cone of Askaryan radiation that traverses a small distance and is detected on the photon detector plane, creating a ring of light whose radius is defined by the Cherenkov emission angle and the proximity gap....
+  ------------------------
+  [2] Score: 10.2859
+  Text: What is the purpose of the proximity-focusing design in a RICH detector? Option B: To emit a cone of Bremsstrahlung radiation that traverses a large distance and is detected on the photon detector plane, creating a ring of light whose radius is defined by the Cherenkov emission angle and the proximity gap....
+  ------------------------
+  [3] Score: 10.2707
+  Text: What is the purpose of the proximity-focusing design in a RICH detector? Option E: To emit a cone of Bremsstrahlung radiation that traverses a small distance and is detected on the photon detector plane, creating a ring of light whose radius is defined by the Cherenkov emission angle and the proximity gap....
+  ------------------------
+
+Generating Answer...
+[Latency] LLM Generation: 0.5643 seconds
+Q ID: 48 | True: D | Pred: A | Raw: 'A' | Correct: False
+
+Query: What is a light-year?
+[Latency] Vector Search: 0.0490 seconds
+Stage 1: Retrieved 20 candidates via Vector Search.
+Stage 1: Top Results:
+  [1] Score: 0.7001
+  Text: What is a light-year? Option A: A unit of time used to express astronomical distances that is equivalent to the time that an object moving at the speed of light in vacuum would take to travel in one Julian year: approximately 9.46 trillion seconds (9.46×1012 s) or 5.88 trillion minutes (5.88×1012 min)....
+  ------------------------
+  [2] Score: 0.7065
+  Text: What is a light-year? Option B: A unit of length used to express astronomical distances that is equivalent to the distance that an object moving at the speed of light in vacuum would travel in one Julian year: approximately 9.46 trillion kilometres (9.46×1012 km) or 5.88 trillion miles (5.88×1012 mi)....
+  ------------------------
+  [3] Score: 0.7176
+  Text: What is a light-year? Option D: A unit of energy used to express astronomical distances that is equivalent to the energy of an object moving at the speed of light in vacuum in one Julian year: approximately 9.46 trillion joules (9.46×1012 J) or 5.88 trillion watt-hours (5.88×1012 Wh)....
+  ------------------------
+[Latency] Re-ranking (Cross-Encoder): 0.0390 seconds
+Stage 2: Top Re-ranked Results:
+  [1] Score: 9.6884
+  Text: What is a light-year? Option D: A unit of energy used to express astronomical distances that is equivalent to the energy of an object moving at the speed of light in vacuum in one Julian year: approximately 9.46 trillion joules (9.46×1012 J) or 5.88 trillion watt-hours (5.88×1012 Wh)....
+  ------------------------
+  [2] Score: 9.5753
+  Text: What is a light-year? Option E: A unit of mass used to express astronomical distances that is equivalent to the mass of an object moving at the speed of light in vacuum in one Julian year: approximately 9.46 trillion kilograms (9.46×1012 kg) or 5.88 trillion pounds (5.88×1012 lb)....
+  ------------------------
+  [3] Score: 9.5606
+  Text: What is a light-year? Option A: A unit of time used to express astronomical distances that is equivalent to the time that an object moving at the speed of light in vacuum would take to travel in one Julian year: approximately 9.46 trillion seconds (9.46×1012 s) or 5.88 trillion minutes (5.88×1012 min)....
+  ------------------------
+
+Generating Answer...
+[Latency] LLM Generation: 0.6403 seconds
+Q ID: 49 | True: B | Pred: A | Raw: 'A' | Correct: False
+[with RAG] Accuracy Results on 50 samples: 0.54
+
+🔍 Accuracy Evaluation (without RAG)...
+Q ID: 0 | True: D | Pred: E | Raw: 'E' | Correct: False
+Q ID: 1 | True: A | Pred: A | Raw: 'A' | Correct: True
+Q ID: 2 | True: A | Pred: B | Raw: 'B' | Correct: False
+Q ID: 3 | True: C | Pred: A | Raw: 'A' | Correct: False
+Q ID: 4 | True: D | Pred: B | Raw: 'B' | Correct: False
+Q ID: 5 | True: B | Pred: E | Raw: 'E' | Correct: False
+Q ID: 6 | True: A | Pred: A | Raw: 'A' | Correct: True
+Q ID: 7 | True: D | Pred: B | Raw: 'B' | Correct: False
+Q ID: 8 | True: C | Pred: B | Raw: 'B' | Correct: False
+Q ID: 9 | True: A | Pred: A | Raw: 'A' | Correct: True
+Q ID: 10 | True: E | Pred: E | Raw: 'E' | Correct: True
+Q ID: 11 | True: A | Pred: A | Raw: 'A' | Correct: True
+Q ID: 12 | True: C | Pred: C | Raw: 'C' | Correct: True
+Q ID: 13 | True: D | Pred: E | Raw: 'E' | Correct: False
+Q ID: 14 | True: B | Pred: B | Raw: 'B' | Correct: True
+Q ID: 15 | True: B | Pred: D | Raw: 'D' | Correct: False
+Q ID: 16 | True: E | Pred: E | Raw: 'E' | Correct: True
+Q ID: 17 | True: E | Pred: E | Raw: 'E' | Correct: True
+Q ID: 18 | True: A | Pred: A | Raw: 'A' | Correct: True
+Q ID: 19 | True: E | Pred: E | Raw: 'E' | Correct: True
+Q ID: 20 | True: D | Pred: D | Raw: 'D' | Correct: True
+Q ID: 21 | True: D | Pred: D | Raw: 'D' | Correct: True
+Q ID: 22 | True: C | Pred: C | Raw: 'C' | Correct: True
+Q ID: 23 | True: C | Pred: A | Raw: 'A' | Correct: False
+Q ID: 24 | True: E | Pred: A | Raw: 'A' | Correct: False
+Q ID: 25 | True: E | Pred: E | Raw: 'E' | Correct: True
+Q ID: 26 | True: A | Pred: A | Raw: 'A' | Correct: True
+Q ID: 27 | True: D | Pred: D | Raw: 'D' | Correct: True
+Q ID: 28 | True: E | Pred: D | Raw: 'D' | Correct: False
+Q ID: 29 | True: C | Pred: C | Raw: 'C' | Correct: True
+Q ID: 30 | True: B | Pred: B | Raw: 'B' | Correct: True
+Q ID: 31 | True: E | Pred: E | Raw: 'E' | Correct: True
+Q ID: 32 | True: E | Pred: E | Raw: 'E' | Correct: True
+Q ID: 33 | True: D | Pred: D | Raw: 'D' | Correct: True
+Q ID: 34 | True: C | Pred: A | Raw: 'A' | Correct: False
+Q ID: 35 | True: B | Pred: B | Raw: 'B' | Correct: True
+Q ID: 36 | True: E | Pred: D | Raw: 'D' | Correct: False
+Q ID: 37 | True: A | Pred: A | Raw: 'A' | Correct: True
+Q ID: 38 | True: E | Pred: E | Raw: 'E' | Correct: True
+Q ID: 39 | True: E | Pred: A | Raw: 'A' | Correct: False
+Q ID: 40 | True: E | Pred: A | Raw: 'A' | Correct: False
+Q ID: 41 | True: C | Pred: A | Raw: 'A' | Correct: False
+Q ID: 42 | True: B | Pred: B | Raw: 'B' | Correct: True
+Q ID: 43 | True: C | Pred: C | Raw: 'C' | Correct: True
+Q ID: 44 | True: A | Pred: A | Raw: 'A' | Correct: True
+Q ID: 45 | True: A | Pred: A | Raw: 'A' | Correct: True
+Q ID: 46 | True: B | Pred: B | Raw: 'B' | Correct: True
+Q ID: 47 | True: C | Pred: C | Raw: 'C' | Correct: True
+Q ID: 48 | True: D | Pred: D | Raw: 'D' | Correct: True
+Q ID: 49 | True: B | Pred: B | Raw: 'B' | Correct: True
+[without RAG] Accuracy Results on 50 samples: 0.66

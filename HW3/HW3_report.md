@@ -1,6 +1,6 @@
 # Assignment 3: RAG for Science Question Answering
 
-**Student ID:** 314832008
+**Student ID:** 314832008    
 **Source Code:** [https://github.com/tingul4/RNN-course](https://github.com/tingul4/RNN-course)
 
 ---
@@ -64,14 +64,34 @@ Experiments were run on the first 50 training questions.
 
 ### 4.1 Setup
 
-- **LLM Integration:** Connected the end-to-end pipeline to a local LLM API server running `llama3:8b` via Ollama. The top-3 context chunks generated from the Stage 2 cross-encoder were concatenated and fed into the prompt.
-- **System Prompt Design:** A strict system prompt was utilized to actively mitigate hallucinations. The LLM was instructed: *"You are a helpful science assistant. Answer the question based ONLY on the context provided below. If the answer is not in the context, say 'I don't know'."*
+- **LLM Integration:** Connected the end-to-end pipeline to a local LLM API server running `llama3:8b` via Ollama. The top-3 context chunks from Stage 2 re-ranking were concatenated and fed into the prompt as context.
+- **System Prompt Design:** The prompt includes the retrieved context, the question, and all five answer options (A–E). The LLM is instructed:
+  > *"You are a helpful science assistant. Use the context below to answer the multiple-choice question. If the correct answer cannot be deduced from the context, output 'F' meaning 'I do not know'. Reply with ONLY the letter of the correct answer (A, B, C, D, or E). No explanation."*
 
+  Unlike a free-form generation approach, presenting the MCQ options directly allows the LLM to reason over all candidates and output a single letter, which is parsed by regex. This also makes the evaluation deterministic and avoids the noise introduced by cosine-similarity-based option matching.
+
+  The strict "output F if unknown" instruction is intentional: it forces the model to refrain from guessing when the context provides no relevant signal. Outputs of 'F' (or any non-A–E response) are counted as incorrect, incentivizing the model to use context when available rather than hallucinating an answer.
+
+- **Baseline (No RAG):** To isolate the effect of retrieval, a second evaluation was run where the LLM received only the question and the five answer options—no retrieved context—and was asked to answer from its own parametric knowledge.
 
 ### 4.2 Accuracy Results
 
-- **Evaluation Dataset:** Ran the full RAG pipeline on an evaluation set holding 50 generic science questions from the main Kaggle dataset.
-- **Accuracy Score:** The pipeline successfully deduced the correct options around ~70% of the time on average (`Accuracy = 0.70`). This firmly matches the optimal Recall@3 (0.70) from Stage 2 retrieval, demonstrating that the LLM accurately synthesizes context to pick choices when the correct information is present in the re-ranked chunks.
+Evaluated on the first 50 questions from `train.csv`.
+
+| Configuration   | Accuracy |
+|-----------------|----------|
+| Without RAG     | **0.66** |
+| With RAG        | 0.54     |
+
+The RAG pipeline underperformed the no-RAG baseline by **12 percentage points**. This counterintuitive result is explained by a fundamental mismatch between the corpus design and the cross-encoder's scoring objective:
+
+1. **Corpus is MCQ options, not knowledge paragraphs.** The vector database was built from `(question + one answer option)` pairs derived from `train.csv`. When a question is queried, the most semantically similar documents are the other answer options for the *same question*—not external explanatory knowledge. These documents do not state *which* option is correct.
+
+2. **Cross-encoder promotes plausible-sounding wrong answers.** The re-ranker (`ms-marco-MiniLM-L-6-v2`) was trained on web passage relevance, not MCQ answer selection. It scores how *relevant* a passage sounds to a query, not whether it is factually correct. Distractor options are deliberately crafted to appear plausible, so they often receive high relevance scores. For example, on ID#0 (MOND galaxy clusters, correct = D), the re-ranker ranked Option B—a wrong but superficially similar answer—at the top, and the LLM followed the misleading context.
+
+3. **LLM is anchored to the provided context.** When the retrieved context highlights a wrong option, the LLM's generation is biased toward that option even when its own parametric knowledge would have answered correctly. Without RAG, `llama3:8b` answers from pretraining knowledge and achieves 66% accuracy on these STEM questions.
+
+**Note on corpus limitation:** The assignment specification calls for a Wikipedia plain-text corpus as the knowledge base. Because only `train.csv` was available (the Wikipedia parquet file was not downloaded), the RAG corpus was substituted with the Q&A pairs from `train.csv`. This substitution is the root cause of the underperformance and is an important finding: **RAG improves accuracy only when the corpus provides genuine external knowledge that the LLM does not already possess—not when the corpus mirrors the format of the questions themselves.**
 
 
 ---
@@ -91,19 +111,29 @@ I evaluated the impact of different chunk sizes by comparing `chunk_size=500` an
 The re-ranking stage plays a critical role in overcoming the limitations of standard vector search, especially for complex scientific queries where exact conceptual relationships matter more than keyword overlap. Here are two examples demonstrating this:
 
 **Example 1 — ID#3 (What is the significance of regularization in terms of renormalization problems in physics?, correct = C)**
-- **Stage 1 (Vector Search):** Initially, the dense vector search prioritized documents with broad keyword overlaps. It retrieved texts discussing "regularization" in machine learning contexts (like L1/L2 regularization) or generic physics problems at the top, pushing the correct physics-specific document down in the top-20.
-- **Stage 2 (Re-ranking):** The cross-encoder processes the query and document together to evaluate deep semantic relationships. It correctly identified the specific theoretical physics context (the intersection of "regularization" and "renormalization") and successfully promoted the correct document (Option C) straight to the top.
+
+- **Stage 1 (Vector Search):** The dense vector search retrieved Options E, A, and B in the top-3 — all plausible-sounding candidates using similar terminology ("finite radius," "infinite radius," "mass-energy of an electron"), but none of them was the correct answer. Option C, which correctly describes regularization as a means of demonstrating computability of systems below a certain size, was ranked outside the top-3 by the embedding model.
+- **Stage 2 (Re-ranking):** The cross-encoder processes each (query, candidate) pair jointly rather than independently. It correctly distinguished the subtle semantic difference between Option C and the other distractors, successfully promoting Option C (score: 9.50) to the #1 position and demoting the less precise options.
 
 **Example 2 — ID#11 (What is the relationship between the Wigner function and the density matrix operator?, correct = A)**
 - **Stage 1 (Vector Search):** The vector search retrieved several irrelevant documents that mentioned "Wigner function" or "density matrix" in isolation, leaving the correct answer out of the top results. It struggled to evaluate the nuanced relationship being asked for.
 - **Stage 2 (Re-ranking):** The cross-encoder effectively interpreted the relational aspect of the query ("What is the relationship between..."). It scanned the initial top-20 candidates and bumped the correct document (Option A) to the #1 position because it explicitly explained the mathematical mapping between the two concepts rather than just randomly hitting the keywords.
 
 ### 5.3 Latency
-- **Vector Search**: ~0.02 seconds (Note: The first query incurs a cold-start overhead of ~0.45 seconds due to PyTorch/ONNX model and index initialization, but subsequent queries consistently drop to ~20 milliseconds).
- 
-- **Re-ranking (Cross-Encoder)**: ~0.015 to 0.08 seconds. Although cross-encoders are generally computationally expensive, the latency remains very low because it only processes a small subset of documents (the top-20 candidates) retrieved from Stage 1.
- 
-- **LLM Generation**: ~0.65 seconds. The auto-regressive text generation by the local LLM is the most time-consuming stage of the pipeline, as it reads the context and predicts the response token by token.
+
+Measured across 50 queries on an RTX 4090:
+
+| Stage                      | Typical Latency    | Notes                                                           |
+|----------------------------|--------------------|-----------------------------------------------------------------|
+| Vector Search              | ~0.035–0.050 s     | First query ~0.45 s (index cold-start); subsequent queries warm |
+| Re-ranking (Cross-Encoder) | ~0.032–0.040 s     | Scores 20 (query, doc) pairs via GPU; fast due to small batch   |
+| LLM Generation             | ~0.43 s (warm avg) | First call ~12.5 s (Ollama model load); subsequent calls stable |
+
+- **Vector Search** is the fastest stage after warm-up, leveraging approximate nearest-neighbor search in ChromaDB.
+- **Re-ranking** adds only ~35 ms on average, well within acceptable latency for most applications.
+- **LLM Generation** dominates total latency at ~0.43 s per query, as each forward pass decodes the response token-by-token.
 
 - **Is the re-ranking worth the extra time cost?**
-  Yes, absolutely. The re-ranking stage only adds a minimal latency overhead (around 15-80 milliseconds) to the overall pipeline. Compared to the LLM text generation stage, which takes nearly an order of magnitude longer (~0.65+ seconds), this cost is negligible. In exchange for this marginal delay, the cross-encoder significantly improves the precision of the context fed into the LLM. This high-quality context strongly enhances the final answer accuracy and effectively reduces hallucinations, making the trade-off highly worthwhile.
+  From a **retrieval quality** perspective, yes: re-ranking improved the Recall@3 hit rate by +10% on Index A (Fixed-500) at a cost of only ~35 ms, which is less than 10% of the total pipeline latency. The cross-encoder adds high-precision scoring at negligible cost relative to LLM generation.
+
+  However, from an **end-to-end accuracy** perspective in this specific experiment, the benefit was not realized because the corpus itself was the limiting factor. When retrieval context misleads the LLM (as analyzed in Section 4.2), improving retrieval precision alone does not improve final accuracy. With a proper knowledge corpus (e.g., Wikipedia passages), the re-ranking investment would translate directly into accuracy gains.
