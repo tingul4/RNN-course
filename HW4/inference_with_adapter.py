@@ -1,8 +1,10 @@
-import torch, json
+import torch, json, os
 from peft import PeftModel
 from transformers import AutoProcessor
 from datasets import load_dataset
 from Load import model as base_model, processor
+
+os.makedirs("experiments", exist_ok=True)
 
 adapter_path = "./llava-finetuned/adapter"
 print(f"Loading LoRA adapter from {adapter_path}...")

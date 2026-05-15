@@ -84,6 +84,7 @@ training_args = SFTConfig(
     num_train_epochs=3,
     save_strategy="no",
     max_length=1024,
+    seed=42,
     # skip_prepare_dataset=False allows SFTTrainer to natively parse prompt/completion
     dataset_kwargs={"skip_prepare_dataset": False},
 )

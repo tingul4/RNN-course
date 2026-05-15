@@ -3,6 +3,8 @@ from datasets import load_dataset
 import json, os
 from Load import model, processor
 
+os.makedirs("experiments", exist_ok=True)
+
 # Load ChartQA test split and pick 5 diverse samples
 dataset = load_dataset("HuggingFaceM4/ChartQA", split="test")
 # Fixed indices for reproducibility
@@ -39,7 +41,7 @@ for i, sample in enumerate(samples):
     print()
 
     # Save image for report
-    img_path = f"/raid/danielchen/RNN-course/HW4/experiments/sample_{i+1}.png"
+    img_path = f"experiments/sample_{i+1}.png"
     image.save(img_path)
 
 # Dump results to JSON for later use in report
