@@ -1,47 +1,47 @@
 [
   {
     "index": 0,
-    "question": "How many food item is shown in the bar graph?",
-    "ground_truth": [
-      "14"
-    ],
-    "baseline_answer": "The bar graph shows the price index in food commodities from 1950 to 2015.",
-    "finetuned_answer": "8"
-  },
-  {
-    "index": 10,
-    "question": "What is the value of Slovenia in the graph?",
-    "ground_truth": [
-      "1"
-    ],
-    "baseline_answer": "In the graph, the value of Slovenia is 0.7.",
-    "finetuned_answer": "0.08"
-  },
-  {
-    "index": 25,
-    "question": "Is the largest segment greater than sum of all the other segments?",
+    "question": "Is the value of Favorable 38 in 2015?",
     "ground_truth": [
       "Yes"
     ],
-    "baseline_answer": "Yes, the largest segment is greater than the sum of all the other segments.",
+    "baseline_answer": "The bar graph shows the price index in food commodities from 1950 to 2015.",
     "finetuned_answer": "Yes"
   },
   {
-    "index": 50,
-    "question": "What's the least popular game in the chart?",
+    "index": 10,
+    "question": "What's the rightmost value dark brown graph?",
     "ground_truth": [
-      "Simulation"
+      "47"
+    ],
+    "baseline_answer": "In the graph, the value of Slovenia is 0.7.",
+    "finetuned_answer": "47"
+  },
+  {
+    "index": 25,
+    "question": "What's the median value of orange graph?",
+    "ground_truth": [
+      "73"
+    ],
+    "baseline_answer": "Yes, the largest segment is greater than the sum of all the other segments.",
+    "finetuned_answer": "70"
+  },
+  {
+    "index": 50,
+    "question": "What's the percentage of Republican/Lean Rep in 2018 who say American allies in Europe should increase their spending on national defense?",
+    "ground_truth": [
+      "59"
     ],
     "baseline_answer": "The least popular game in the chart is \"Role-Playing.\"",
-    "finetuned_answer": "Role-playing"
+    "finetuned_answer": "59"
   },
   {
     "index": 75,
-    "question": "What is the sum of the smallest three bars?",
+    "question": "What's the ratio(A:B) of largest value of green graph and smallest value of blue graph?",
     "ground_truth": [
-      "0.1922"
+      "1.634722222"
     ],
     "baseline_answer": "The sum of the smallest three bars is 100%.",
-    "finetuned_answer": "10"
+    "finetuned_answer": "1.5"
   }
 ]

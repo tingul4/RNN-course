@@ -39,8 +39,8 @@ for i, sample in enumerate(samples):
     print()
 
     # Save image for report
-    # img_path = f"/raid/danielchen/RNN-course/HW4/sample_{i+1}.png"
-    # image.save(img_path)
+    img_path = f"/raid/danielchen/RNN-course/HW4/experiments/sample_{i+1}.png"
+    image.save(img_path)
 
 # Dump results to JSON for later use in report
 with open("experiments/baseline_results.json", "w") as f:

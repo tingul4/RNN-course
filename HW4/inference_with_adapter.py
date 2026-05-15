@@ -68,7 +68,7 @@ for i, (sample, baseline) in enumerate(zip(samples, baseline_results)):
     print(f"  Fine-tuned   : {answer}")
     print()
 
-with open("experiments/finetuned_train_results.json", "w") as f:
+with open("experiments/finetuned_results.json", "w") as f:
     json.dump(results, f, indent=2, ensure_ascii=False)
 
-print("Results saved to experiments/finetuned_train_results.json")
+print("Results saved to experiments/finetuned_results.json")
