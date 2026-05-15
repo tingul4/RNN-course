@@ -1,6 +1,6 @@
 # Assignment 3: RAG for Science Question Answering
 
-**Student ID:** 314832008    
+**Student ID:** 314832008
 **Source Code:** [https://github.com/tingul4/RNN-course](https://github.com/tingul4/RNN-course)
 
 ---
