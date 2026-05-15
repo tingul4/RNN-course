@@ -1,120 +1,102 @@
 import os
+import logging
+from datetime import datetime
 
 os.environ["CUDA_VISIBLE_DEVICES"] = "3"
-os.environ["TENSORBOARD_LOGGING_DIR"] = "./llava-finetuned/logs"
+
+# Create a timestamped directory for logs
+timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+log_dir = os.path.join("./llava-finetuned/logs", timestamp)
+os.makedirs(log_dir, exist_ok=True)
+
+os.environ["TENSORBOARD_LOGGING_DIR"] = log_dir
 
 from datasets import load_dataset
 from Load import processor
 from Config import model
-from dataclasses import dataclass
-from typing import Any
-from torch.utils.data import Dataset
-from transformers import TrainingArguments
-from trl import SFTTrainer
+from transformers import TrainerCallback
+from trl import SFTTrainer, SFTConfig
+
+# Configure standard python logging
+logging.basicConfig(
+    filename=os.path.join(log_dir, "training.log"),
+    filemode="w",
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    level=logging.INFO,
+)
+logger = logging.getLogger(__name__)
+
+class LoggingCallback(TrainerCallback):
+    def on_log(self, args, state, control, logs=None, **kwargs):
+        if logs is not None:
+            logger.info(f"Step {state.global_step}: {logs}")
 
 # Load a tiny demo dataset (e.g., from HuggingFace)
-# Students should implement a proper formatting function here
 dataset = load_dataset("HuggingFaceM4/ChartQA", split="train[:1000]")
 
+def format_dataset(sample):
+    """
+    Format dataset for SFTTrainer's prompt-completion vision-language modeling.
+    SFTTrainer will automatically handle tokenization, chat templates, and
+    setting prompt labels to -100 (completion-only loss).
+    """
+    label = (
+        sample["label"][0] if isinstance(sample["label"], list) else sample["label"]
+    )
+    
+    # Append EOS token to the completion to teach the model when to stop generating
+    label += processor.tokenizer.eos_token
+    
+    prompt = [
+        {
+            "role": "user",
+            "content": [
+                {"type": "image"},
+                {"type": "text", "text": sample["query"]},
+            ],
+        }
+    ]
+    completion = [
+        {"role": "assistant", "content": [{"type": "text", "text": label}]}
+    ]
+    
+    # trl's Vision-Language SFTTrainer requires images to be in a list
+    return {
+        "prompt": prompt,
+        "completion": completion,
+        "images": [sample["image"]]
+    }
 
-class ChartQADataset(Dataset):
-    def __init__(self, hf_dataset):
-        self.data = hf_dataset
-
-    def __len__(self):
-        return len(self.data)
-
-    def __getitem__(self, idx):
-        sample = self.data[idx]
-        # ChartQA label is a list of acceptable answers; take the first
-        label = (
-            sample["label"][0] if isinstance(sample["label"], list) else sample["label"]
-        )
-        conversation = [
-            {
-                "role": "user",
-                "content": [
-                    {"type": "image"},
-                    {"type": "text", "text": sample["query"]},
-                ],
-            },
-            {"role": "assistant", "content": [{"type": "text", "text": label}]},
-        ]
-        return {"conversation": conversation, "image": sample["image"]}
-
-
-@dataclass
-class MultimodalCollator:
-    processor: Any
-
-    def __call__(self, features):
-        # tokenize=False returns a string, not token IDs
-        texts = [
-            self.processor.apply_chat_template(
-                f["conversation"], add_generation_prompt=False, tokenize=False
-            )
-            + self.processor.tokenizer.eos_token
-            for f in features
-        ]
-        images = [f["image"] for f in features]
-
-        batch = self.processor(
-            text=texts,
-            images=images,
-            padding=True,
-            truncation=True,
-            max_length=1024,
-            return_tensors="pt",
-        )
-
-        labels = batch["input_ids"].clone()
-        # Mask padding tokens
-        labels[labels == self.processor.tokenizer.pad_token_id] = -100
-
-        # Mask prompt tokens: only compute loss on assistant response
-        # Build prompt-only text to find where assistant response starts
-        for i, f in enumerate(features):
-            prompt_text = self.processor.apply_chat_template(
-                f["conversation"][:-1],  # exclude assistant turn
-                add_generation_prompt=True,
-                tokenize=False,
-            )
-            # 必須同時傳入影像給 processor，才能精準算出 <image> 展開為影像 embedding 後的實際 Token 數量
-            prompt_inputs = self.processor(
-                text=prompt_text, images=f["image"], return_tensors="pt",
-                truncation=True, max_length=1024
-            )
-            prompt_len = prompt_inputs["input_ids"].shape[1]
-            labels[i, :prompt_len] = -100
-
-        batch["labels"] = labels
-        return batch
-
+# Apply formatting and remove original columns to prevent collator errors
+dataset = dataset.map(format_dataset, remove_columns=dataset.column_names)
 
 # --- Training Setup ---
-training_args = TrainingArguments(
-    output_dir="./llava-finetuned",  # stores training state / logs
-    per_device_train_batch_size=4,  # 4090 can handle 4-8 depending on image resolution
+# Use SFTConfig instead of TrainingArguments when using SFTTrainer in newer trl versions
+training_args = SFTConfig(
+    output_dir="./llava-finetuned",
+    per_device_train_batch_size=4,
     gradient_accumulation_steps=4,
     learning_rate=2e-4,
     bf16=True,
+    logging_dir=log_dir,
     logging_steps=10,
-    report_to="tensorboard",
+    report_to=["tensorboard"],
     num_train_epochs=3,
     save_strategy="no",
-    remove_unused_columns=False,  # our collator needs 'conversation' and 'image' keys
+    max_length=1024,
+    # skip_prepare_dataset=False allows SFTTrainer to natively parse prompt/completion
+    dataset_kwargs={"skip_prepare_dataset": False},
 )
 
-# For HW, students can use the standard Trainer if they handle data collation manually,
-# or use SFTTrainer from TRL which is easier for chat formats.
-
 # --- Trainer Setup ---
-
+# By using SFTTrainer with the prompt/completion format, we can completely eliminate
+# the need for a manual MultimodalCollator. The SFTTrainer will natively handle it!
 trainer = SFTTrainer(
     model=model,
     args=training_args,
-    train_dataset=ChartQADataset(dataset),
-    data_collator=MultimodalCollator(processor),
+    train_dataset=dataset,
+    processing_class=processor,
+    callbacks=[LoggingCallback()],
 )
 
 print("Starting training...")
