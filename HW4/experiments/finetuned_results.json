@@ -1,0 +1,47 @@
+[
+  {
+    "index": 0,
+    "question": "How many food item is shown in the bar graph?",
+    "ground_truth": [
+      "14"
+    ],
+    "baseline_answer": "The bar graph shows the price index in food commodities from 1950 to 2015.",
+    "finetuned_answer": "8"
+  },
+  {
+    "index": 10,
+    "question": "What is the value of Slovenia in the graph?",
+    "ground_truth": [
+      "1"
+    ],
+    "baseline_answer": "In the graph, the value of Slovenia is 0.7.",
+    "finetuned_answer": "0.08"
+  },
+  {
+    "index": 25,
+    "question": "Is the largest segment greater than sum of all the other segments?",
+    "ground_truth": [
+      "Yes"
+    ],
+    "baseline_answer": "Yes, the largest segment is greater than the sum of all the other segments.",
+    "finetuned_answer": "Yes"
+  },
+  {
+    "index": 50,
+    "question": "What's the least popular game in the chart?",
+    "ground_truth": [
+      "Simulation"
+    ],
+    "baseline_answer": "The least popular game in the chart is \"Role-Playing.\"",
+    "finetuned_answer": "Role-playing"
+  },
+  {
+    "index": 75,
+    "question": "What is the sum of the smallest three bars?",
+    "ground_truth": [
+      "0.1922"
+    ],
+    "baseline_answer": "The sum of the smallest three bars is 100%.",
+    "finetuned_answer": "10"
+  }
+]

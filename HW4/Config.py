@@ -1,4 +1,5 @@
 from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
+from Load import model
 
 # 1. Prepare model for training (freeze layers, cast to float32 for stability)
 model = prepare_model_for_kbit_training(model)
@@ -9,7 +10,7 @@ model = prepare_model_for_kbit_training(model)
 peft_config = LoraConfig(
     r=16,
     lora_alpha=32,
-    target_modules=["q_proj", "v_proj"], 
+    target_modules=["q_proj", "k_proj", "v_proj", "o_proj"], 
     lora_dropout=0.05,
     bias="none",
     task_type="CAUSAL_LM"

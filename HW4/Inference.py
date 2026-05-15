@@ -1,5 +1,6 @@
 from PIL import Image
 import requests
+from Load import model, processor
 
 # Load an image
 url = "https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/transformers/tasks/car.jpg?download=true"

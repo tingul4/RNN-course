@@ -9,3 +9,6 @@ saved_model_bert-large-cased
 chroma_db/
 .claude/
 .vscode/
+.worktrees/
+llava-finetuned/
+.plan/
